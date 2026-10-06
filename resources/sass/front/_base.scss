@@ -1,0 +1,109 @@
+@use 'colors' as *;
+@use 'variables' as *;
+@use 'fonts' as *;
+
+html { scroll-behavior: smooth; }
+
+body.front-body {
+    background: $front-surface;
+    color: $front-text;
+    font-family: var(--front-font-primary);
+    font-size: 1rem;
+    line-height: $front-body-line-height;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; transition: color $front-transition; }
+a:hover { color: $front-primary; }
+img { max-width: 100%; }
+
+.front-container { max-width: $front-content-width; }
+.front-ui { font-family: var(--front-font-ui); line-height: $front-ui-line-height; }
+.front-section { padding-block: $front-section-space; }
+.front-section--muted { background: $front-light; }
+.front-section-heading { margin-bottom: 1.8rem; }
+.front-section-heading__eyebrow {
+    color: $front-primary;
+    font-family: var(--front-font-ui);
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    margin-bottom: .15rem;
+}
+.front-section-heading h2 {
+    font-family: var(--front-font-primary);
+    font-size: clamp(1.7rem, 3vw, 2.55rem);
+    font-weight: 700;
+    line-height: $front-heading-line-height;
+    margin: 0;
+}
+.front-section-heading__line { background: $front-primary; display: block; height: 3px; margin-top: .5rem; width: 54px; }
+.front-meta { color: $front-muted; font-family: var(--front-font-ui); font-size: $front-meta-size; line-height: $front-ui-line-height; }
+.front-link { color: $front-primary; font-family: var(--front-font-ui); font-weight: 700; }
+.front-object-cover { height: 100%; object-fit: cover; width: 100%; }
+.front-card {
+    background: $front-surface;
+    border: 1px solid $front-border;
+    border-radius: $front-radius;
+    box-shadow: $front-shadow-sm;
+    height: 100%;
+    overflow: hidden;
+    transition: transform $front-transition, box-shadow $front-transition;
+}
+.front-card:hover { box-shadow: $front-shadow; transform: translateY(-4px); }
+.front-card__body { padding: 1.15rem; }
+.front-card__title { font-size: 1.15rem; font-weight: 700; line-height: 2; margin: .35rem 0 0; }
+.front-tag {
+    background: $front-accent-soft;
+    border: 1px solid $front-accent-border;
+    border-radius: 999px;
+    color: $front-accent-active;
+    display: inline-block;
+    font-family: var(--front-font-ui);
+    font-size: .7rem;
+    line-height: 1.4;
+    padding: .3rem .65rem;
+}
+
+html[dir='rtl'] .front-arrow { transform: scaleX(-1); }
+html[dir='ltr'] body.front-body { direction: ltr; text-align: left; }
+
+html[dir='ltr'] {
+    .front-card__title,
+    .front-section-heading,
+    .front-taza-layout,
+    .front-taza-magazine__content,
+    .front-mazmoon-detail__layout > *,
+    .front-mazmoon-related__content,
+    .front-account-card-grid > *,
+    .front-mazameen-card__content,
+    .front-category-detail__layout > *,
+    .front-auth-card__content,
+    .faq-page__main,
+    .front-home-promo__content,
+    .front-sabqa-layout > *,
+    .front-sabqa-card__content,
+    .front-shumara-detail__layout > *,
+    .front-shumara-detail__content {
+        direction: ltr;
+        text-align: left;
+    }
+
+    .front-author-card { flex-direction: row; text-align: left; }
+    .front-author-profile__detail { left: 0; margin-left: 15px; margin-right: 0; right: auto; text-align: left; }
+    .front-account-nav-link,
+    .user-subscription-history-table th,
+    .front-ad-request-detail-grid dd,
+    .front-account-listing-table thead th,
+    .front-account-listing-table tbody td,
+    .subscription-membership-module-row,
+    .subscription-checkout-product__module,
+    .subscription-payment-option__details { text-align: left; }
+    .front-account-user p { justify-content: flex-start; }
+    .front-account-activity-item time,
+    .front-account-bookmarks__item time,
+    .front-account-activities__item time { text-align: left; }
+    .front-account-listing-table-wrap .dt-container { direction: ltr; }
+    .front-most-viewed__tabs { direction: ltr; }
+}

@@ -1,0 +1,179 @@
+@use 'colors' as *;
+@use 'variables' as *;
+
+.front-auth-page {
+    background:
+        radial-gradient(circle at 7% 38%, rgba($front-primary, .08) 0 115px, transparent 116px),
+        radial-gradient(circle at 94% 72%, rgba($front-primary, .07) 0 150px, transparent 151px),
+        linear-gradient(135deg, $front-primary-soft, $front-surface 46%, $front-primary-soft);
+    min-height: 620px;
+    padding-block: 1.25rem 2.5rem;
+}
+
+.front-auth-page__container { max-width: 1320px; }
+
+.front-auth-card {
+    background: $front-surface;
+    border: 1px solid $front-border;
+    border-radius: $front-radius;
+    box-shadow: $front-shadow;
+    direction: ltr;
+    display: grid;
+    grid-template-columns: minmax(310px, 5fr) minmax(0, 7fr);
+    margin: 1rem auto 0;
+    max-width: 1120px;
+    overflow: hidden;
+}
+
+.front-auth-card--login { grid-template-columns: minmax(340px, 5fr) minmax(0, 7fr); max-width: 1040px; }
+.front-auth-card--compact { display: block; max-width: 620px; }
+
+.front-auth-card__aside,
+.front-auth-card__content { direction: rtl; }
+
+.front-auth-card__aside {
+    align-items: center;
+    background: linear-gradient(145deg, $front-primary-soft, $front-surface);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    padding: clamp(1.75rem, 3vw, 3rem);
+    position: relative;
+    text-align: center;
+}
+
+.front-auth-card__aside::before,
+.front-auth-card__aside::after {
+    background: rgba($front-primary, .07);
+    border-radius: 50%;
+    content: '';
+    position: absolute;
+}
+
+.front-auth-card__aside::before { height: 180px; inset: -70px auto auto -70px; width: 180px; }
+.front-auth-card__aside::after { bottom: 16%; height: 90px; right: -42px; width: 90px; }
+
+.front-auth-brand { margin-bottom: 1.5rem; position: relative; z-index: 1; }
+.front-auth-brand img { display: block; height: 68px; max-width: 230px; object-fit: contain; }
+.front-auth-brand strong { color: $front-primary; font-size: 1.5rem; }
+
+.front-auth-card__aside h2 { color: $front-text; font-size: clamp(1.7rem, 3vw, 2.35rem); margin-bottom: .75rem; position: relative; }
+.front-auth-card__aside > p { color: $front-muted; line-height: 1.9; margin-bottom: 1.25rem; max-width: 410px; position: relative; }
+
+.front-auth-benefits { display: grid; gap: .85rem; list-style: none; margin: 0; padding: 0; position: relative; text-align: right; width: 100%; }
+.front-auth-benefits li { align-items: center; display: flex; gap: .8rem; }
+.front-auth-benefits li > span { align-items: center; background: rgba($front-primary, .11); border-radius: 50%; color: $front-primary; display: inline-flex; flex: 0 0 42px; height: 42px; justify-content: center; }
+.front-auth-benefits div { display: grid; gap: .1rem; }
+.front-auth-benefits strong { color: $front-text; font-size: 1rem; }
+.front-auth-benefits small { color: $front-muted; }
+
+.front-auth-illustration {
+    align-items: center;
+    background: rgba($front-surface, .82);
+    border: 5px solid rgba($front-primary, .55);
+    border-bottom-width: 13px;
+    border-radius: .65rem;
+    box-shadow: 0 1rem 2rem rgba($front-primary, .12);
+    display: flex;
+    flex-direction: column;
+    height: 128px;
+    justify-content: center;
+    margin-top: 1.5rem;
+    position: relative;
+    width: 205px;
+}
+
+.front-auth-illustration > i { align-items: center; background: $front-primary; border-radius: 50%; color: $front-white; display: flex; font-size: 1.45rem; height: 48px; justify-content: center; margin-bottom: .65rem; width: 48px; }
+.front-auth-illustration__line { background: $front-primary-soft; border-radius: 1rem; display: block; height: 7px; margin-top: .3rem; width: 105px; }
+.front-auth-illustration__line--short { width: 76px; }
+.front-auth-illustration__lock { background: $front-primary !important; border-radius: .35rem !important; bottom: -18px; font-size: 1rem !important; height: 45px !important; left: -20px; margin: 0 !important; position: absolute; width: 42px !important; }
+
+.front-auth-card__content { padding: clamp(1.75rem, 4vw, 3.5rem); }
+.front-auth-heading { margin-bottom: 1.5rem; text-align: center; }
+.front-auth-heading h1 { color: $front-text; font-size: clamp(2rem, 4vw, 2.8rem); margin: 0; }
+.front-auth-heading > span { background: $front-primary; display: block; height: 2px; margin: 1.5rem auto .5rem; width: 50px; }
+.front-auth-heading p { color: $front-muted; margin: 0; }
+
+.front-auth-form { font-family: inherit; }
+.front-auth-field { display: grid; gap: .4rem; align-content: start; }
+.front-auth-submit:disabled { opacity: .55; cursor: not-allowed; }
+.front-register-captcha { margin-block: 1rem; direction: ltr; }
+.front-auth-field label { color: $front-text; font-weight: 700; }
+.front-auth-field label span { color: $front-primary; }
+.front-auth-field > small { color: $front-muted; }
+
+.front-auth-control { position: relative; }
+.front-auth-control input {
+    background: $front-surface;
+    border: 1px solid $front-border;
+    border-radius: $front-radius-sm;
+    color: $front-text;
+    min-height: 48px;
+    outline: 0;
+    padding: .7rem 2.8rem .7rem .9rem;
+    transition: border-color .2s ease, box-shadow .2s ease;
+    width: 100%;
+}
+
+.front-auth-control input:focus { border-color: $front-primary; box-shadow: 0 0 0 .2rem rgba($front-primary, .14); }
+.front-auth-control input::placeholder { color: $front-muted; opacity: .8; }
+.front-auth-control input[dir='ltr'] { padding-left: 2.8rem; padding-right: .9rem; text-align: left; }
+.front-auth-field__icon { color: $front-text; pointer-events: none; position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); }
+.front-auth-control input[dir='ltr'] + .front-auth-field__icon { left: 1rem; right: auto; }
+.front-auth-control--password input { padding-left: 2.8rem; }
+
+.front-auth-password-toggle { background: transparent; border: 0; color: $front-text; left: .8rem; padding: .3rem; position: absolute; top: 50%; transform: translateY(-50%); }
+.front-auth-password-toggle:focus-visible { border-radius: .25rem; outline: 2px solid $front-primary; outline-offset: 2px; }
+
+.front-auth-recaptcha { align-items: center; background: $front-light; border: 1px solid $front-border; border-radius: $front-radius-sm; display: flex; gap: .75rem; margin: 1.25rem auto; max-width: 360px; min-height: 78px; padding: .75rem 1rem; }
+.front-auth-recaptcha__checkbox { background: $front-surface; border: 2px solid $front-muted; display: block; height: 28px; width: 28px; }
+.front-auth-recaptcha__brand { align-items: center; color: $front-primary; display: flex; flex-direction: column; font-size: 1.4rem; margin-right: auto; }
+.front-auth-recaptcha__brand small { color: $front-muted; font-size: .65rem; }
+
+.front-auth-submit { align-items: center; background: $front-primary; border: 1px solid $front-primary; border-radius: $front-radius-sm; color: $front-white; display: flex; font-weight: 700; gap: .75rem; justify-content: center; min-height: 48px; padding: .7rem 1rem; transition: background-color .2s ease, border-color .2s ease; width: 100%; }
+.front-auth-submit:hover,
+.front-auth-submit:focus-visible { background: $front-primary-hover; border-color: $front-primary-hover; color: $front-white; }
+.front-auth-submit:focus-visible { box-shadow: 0 0 0 .2rem rgba($front-primary, .2); outline: 0; }
+
+.front-auth-switch { border-top: 1px solid $front-border; color: $front-muted; margin: 1rem 0 0; padding-top: 1rem; text-align: center; }
+.front-auth-switch a,
+.front-auth-forgot { color: $front-primary; font-weight: 700; text-decoration: none; }
+.front-auth-switch a:hover,
+.front-auth-forgot:hover { color: $front-primary-hover; }
+
+.front-auth-form--login { display: grid; gap: 1.15rem; }
+.front-auth-options { align-items: center; display: flex; justify-content: space-between; margin-bottom: 10px; }
+.front-auth-remember { align-items: center; color: $front-text; display: flex; gap: .5rem; }
+.front-auth-remember input { accent-color: $front-primary; height: 18px; width: 18px; }
+.front-auth-forgot[aria-disabled='true'] { cursor: default; }
+.front-two-factor-code input { font-size: 1.3rem; letter-spacing: .45rem; text-align: center !important; }
+.front-two-factor-resend { margin-top: 1rem; text-align: center; }
+.front-two-factor-resend button { background: transparent; border: 0; color: $front-primary; font-weight: 700; padding: .4rem; }
+
+@media (max-width: 991.98px) {
+    .front-auth-card,
+    .front-auth-card--login { grid-template-columns: minmax(280px, 4fr) minmax(0, 6fr); }
+    .front-auth-benefits { display: none; }
+}
+
+@media (max-width: 767.98px) {
+    .front-auth-page { padding-block: 1rem 2rem; }
+    .front-auth-card,
+    .front-auth-card--login { display: flex; flex-direction: column; }
+    .front-auth-card__aside { padding: 1.5rem; }
+    .front-auth-card__aside > p { margin-bottom: 0; }
+    .front-auth-brand { margin-bottom: 1rem; }
+    .front-auth-brand img { height: 54px; }
+    .front-auth-illustration { display: none; }
+    .front-auth-card__content { padding: 1.5rem; }
+}
+
+@media (max-width: 575.98px) {
+    .front-auth-page__container { padding-inline: .75rem; }
+    .front-auth-card__aside h2 { font-size: 1.6rem; }
+    .front-auth-card__aside > p { line-height: 1.7; }
+    .front-auth-card__content { padding: 1.25rem 1rem; }
+    .front-auth-options { align-items: flex-start; flex-direction: column; gap: .75rem; }
+    .front-auth-recaptcha { width: 100%; }
+}

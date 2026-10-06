@@ -1,0 +1,64 @@
+@use 'colors' as *;
+@use 'variables' as *;
+
+.front-ask-question {
+    background: linear-gradient(180deg, $front-surface 0, $front-primary-soft 100%);
+    padding-bottom: 3.5rem;
+}
+
+.front-ask-question__container { max-width: $front-content-width; }
+.front-ask-question__breadcrumb { background: $front-primary-soft; color: $front-primary; padding: .7rem 0; }
+.front-ask-question__breadcrumb .container-fluid { align-items: center; display: flex; flex-wrap: wrap; gap: .6rem; }
+.front-ask-question__heading { margin: 2.3rem auto 2rem; max-width: 760px; text-align: center; }
+.front-ask-question__heading h1 { color: $front-primary-hover; font-size: clamp(2rem, 4vw, 3rem); margin: 0; }
+.front-ask-question__heading-line { background: $front-primary; display: block; height: 3px; margin: 2rem auto 1rem; width: 50px; }
+.front-ask-question__heading h2 { color: $front-primary-hover; font-size: 1.3rem; margin: 0 0 1rem; }
+.front-ask-question__heading p { color: $front-muted; line-height: 1.9; margin: 0; }
+.front-ask-question__layout { margin-inline: auto; max-width: 1180px; }
+.front-ask-question__card { background: $front-surface; border: 1px solid $front-border; border-radius: $front-radius; box-shadow: $front-shadow-sm; padding: clamp(1.2rem, 2.2vw, 2rem); }
+.front-ask-question__form-card > h2 { border-bottom: 2px solid $front-primary; color: $front-primary-hover; font-size: clamp(1.35rem, 2vw, 1.75rem); margin: 0 0 1rem; padding-bottom: 1rem; }
+.front-ask-question__intro { color: $front-muted; margin: 0 0 1.5rem; }
+.front-ask-question label { color: $front-primary-hover; display: block; font-weight: 700; margin-bottom: .4rem; }
+.front-ask-question label > span { color: #b42318; }
+.front-ask-question__input-wrap { position: relative; }
+.front-ask-question__input-wrap .form-control { padding-inline-start: 2.35rem; }
+.front-ask-question__input-wrap > i { color: $front-primary; inset-inline-start: .8rem; position: absolute; top: 50%; transform: translateY(-50%); }
+.front-ask-question .form-control { border-color: $front-border; border-radius: $front-radius-sm; min-height: 46px; }
+.front-ask-question .form-control:focus { border-color: $front-primary; box-shadow: 0 0 0 .2rem rgba($front-primary, .13); }
+.front-ask-question input[dir='ltr'] { text-align: left; }
+.front-ask-question textarea { min-height: 185px; resize: vertical; }
+.front-ask-question__counter { color: $front-muted; font-size: .85rem; margin-top: .35rem; text-align: left; }
+.front-ask-question__captcha { direction: ltr; margin: 1.2rem 0; max-width: 100%; transform-origin: left top; }
+.front-ask-question__submit { align-items: center; background: $front-primary; border: 1px solid $front-primary; border-radius: $front-radius-sm; color: $front-white; display: inline-flex; font-weight: 700; gap: .6rem; justify-content: center; min-height: 48px; padding: .6rem 1.8rem; }
+.front-ask-question__submit:hover,
+.front-ask-question__submit:focus-visible { background: $front-primary-hover; border-color: $front-primary-hover; color: $front-white; }
+.front-ask-question__form-card form > .front-ask-question__submit { display: flex; margin-inline: auto; min-width: 220px; }
+.front-ask-question__sidebar { display: grid; gap: 1rem; }
+.front-ask-question__info { background: linear-gradient(135deg, #f7faff, #eaf0f7); }
+.front-ask-question__illustration { color: $front-primary; font-size: 5rem; height: 145px; margin: auto; position: relative; text-align: center; }
+.front-ask-question__illustration span { color: $front-white; font-size: 2rem; font-weight: 700; inset-inline-start: 50%; position: absolute; top: 18%; transform: translateX(50%); }
+.front-ask-question__info h2,
+.front-ask-question__contact h2 { color: $front-primary-hover; font-size: 1.5rem; margin: 0 0 1rem; }
+.front-ask-question__info p { color: $front-muted; line-height: 1.9; }
+.front-ask-question__info ul { list-style: none; margin: 1.5rem 0 0; padding: 0; }
+.front-ask-question__info li { align-items: center; display: flex; gap: .7rem; margin-top: 1rem; }
+.front-ask-question__info li > i,
+.front-ask-question__contact a > i { align-items: center; background: $front-primary; border-radius: 50%; color: $front-white; display: inline-flex; flex: 0 0 40px; height: 40px; justify-content: center; width: 40px; }
+.front-ask-question__info li span { display: grid; }
+.front-ask-question__info li strong { color: $front-primary-hover; }
+.front-ask-question__info li small { color: $front-muted; }
+.front-ask-question__contact a { align-items: center; color: $front-primary-hover; display: flex; gap: .7rem; margin-top: .7rem; overflow-wrap: anywhere; }
+.front-ask-question__confirmation { margin: 3rem auto 0; max-width: 650px; text-align: center; }
+.front-ask-question__confirmation h1 { color: $front-primary-hover; font-size: clamp(1.6rem, 3vw, 2.3rem); }
+.front-ask-question__success-icon { align-items: center; background: #e5f5eb; border-radius: 50%; color: #137347; display: inline-flex; font-size: 1.5rem; height: 64px; justify-content: center; margin-bottom: 1.1rem; width: 64px; }
+.front-ask-question__reference { background: $front-primary-soft; border-radius: $front-radius-sm; color: $front-primary-hover; margin: 1.5rem 0; padding: 1rem; }
+
+@media (max-width: 767.98px) {
+    .front-ask-question { padding-bottom: 2rem; }
+    .front-ask-question__heading { margin: 1.8rem auto 1.5rem; }
+    .front-ask-question__card { padding: 1.15rem; }
+}
+
+@media (max-width: 374.98px) {
+    .front-ask-question__captcha { height: 67px; transform: scale(.84); }
+}

@@ -1,0 +1,43 @@
+@use 'colors' as *;
+@use 'variables' as *;
+
+.front-shumara-detail { padding-block: 1.5rem 3rem; }
+.front-shumara-detail__container { max-width: none; padding-inline: clamp(.65rem, 1.5vw, 1.5rem); width: 100%; }
+.front-shumara-detail__layout { direction: ltr; }
+.front-shumara-detail__layout > * { direction: rtl; }
+.front-shumara-detail__card { background: $front-surface; border: 1px solid $front-border; border-radius: $front-radius; box-shadow: $front-shadow-sm; overflow: hidden; }
+.front-shumara-detail__cover { align-items: center; display: flex; justify-content: center; padding: 1rem 1rem .5rem; }
+.front-shumara-detail__cover img { height: auto; max-height: 340px; max-width: 100%; object-fit: contain; width: auto; }
+.front-shumara-detail__content { direction: rtl; padding: .75rem 1rem 1rem; text-align: right; }
+.front-shumara-detail__content h1 { color: $front-text; font-size: clamp(1.25rem, 2vw, 1.6rem); line-height: 1.8; margin-bottom: .35rem; }
+.front-shumara-detail__meta { margin: .7rem 0 0; }
+.front-shumara-detail__description { color: $front-muted; line-height: 2; margin: 1rem 0 0; white-space: pre-line; }
+.front-shumara-reader { margin-top: 0; }
+.front-shumara-related { margin-top: 2rem; }
+.front-pdf-viewer { background: #3f3f3f; border: 1px solid $front-border; border-radius: $front-radius; direction: ltr; min-width: 0; overflow: hidden; }
+.front-pdf-viewer__toolbar { align-items: center; background: #323232; color: #fff; display: flex; flex-wrap: wrap; gap: .35rem; min-height: 48px; padding: .45rem .65rem; }
+.front-pdf-viewer__toolbar button, .front-pdf-viewer__toolbar a { align-items: center; background: transparent; border: 0; border-radius: .25rem; color: inherit; display: inline-flex; height: 34px; justify-content: center; min-width: 34px; padding: .35rem .55rem; text-decoration: none; }
+.front-pdf-viewer__toolbar button:hover, .front-pdf-viewer__toolbar a:hover { background: rgb(255 255 255 / 12%); }
+.front-pdf-viewer__toolbar button:focus-visible, .front-pdf-viewer__toolbar a:focus-visible { box-shadow: 0 0 0 2px $front-primary; outline: 0; }
+.front-pdf-viewer__toolbar button:disabled { cursor: not-allowed; opacity: .4; }
+.front-pdf-viewer__counter, .front-pdf-viewer__zoom { min-width: 58px; text-align: center; }
+.front-pdf-viewer__separator { background: rgb(255 255 255 / 25%); height: 24px; margin-inline: .25rem; width: 1px; }
+.front-pdf-viewer__actions { display: inline-flex; gap: .35rem; margin-left: auto; }
+.front-magazine-bookmark-controls { align-items: center; display: inline-flex; flex-wrap: wrap; gap: .25rem; }
+.front-magazine-bookmark-controls small { color: #dce8f5; font-size: .72rem; padding-inline: .35rem; white-space: nowrap; }
+.front-magazine-bookmark-controls button[data-magazine-bookmark-remove] { color: #ffd4d4; }
+.front-pdf-viewer__canvas-area { height: min(150vh, 900px); overflow: auto; padding: 1rem; text-align: center; }
+.front-pdf-viewer__canvas-area canvas { background: #fff; box-shadow: 0 2px 10px rgb(0 0 0 / 35%); display: inline-block; max-width: none; vertical-align: top; }
+.front-pdf-viewer__loading, .front-pdf-viewer__error { align-items: center; color: #fff; display: flex; height: min(70vh, 560px); justify-content: center; padding: 2rem; text-align: center; }
+.front-pdf-viewer__error { color: #ffd4d4; }
+.front-pdf-viewer__print-frame { border: 0; height: 0; position: fixed; right: 0; top: 0; visibility: hidden; width: 0; }
+.front-shumara-detail .front-sabqa-filter-list li { padding-block: .5rem; }
+.front-shumara-detail .front-sabqa-tags > span { border: 1px solid $front-border; border-radius: 999px; color: $front-text; font-size: .75rem; padding: .3rem .7rem; }
+
+@media (max-width: 767.98px) {
+    .front-shumara-detail__cover img { max-height: 360px; }
+    .front-pdf-viewer__canvas-area { height: 100vh; padding: .65rem; }
+    .front-pdf-viewer__toolbar { gap: .2rem; padding-inline: .35rem; }
+    .front-pdf-viewer__toolbar button, .front-pdf-viewer__toolbar a { min-width: 30px; padding-inline: .4rem; }
+    .front-pdf-viewer__counter, .front-pdf-viewer__zoom { min-width: 50px; }
+}

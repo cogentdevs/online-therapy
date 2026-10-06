@@ -1,0 +1,7 @@
+document.querySelectorAll('[data-newsletter-campaign-form]').forEach((form) => {
+    const select = form.querySelector('[data-newsletter-content-select]');
+    const list = form.querySelector('[data-newsletter-content-list]');
+    const reindex = () => Array.from(list.children).forEach((row, index) => { row.querySelectorAll('[name]').forEach((input) => { input.name = input.name.replace(/contents\[\d+\]/, `contents[${index}]`); }); row.querySelector('[name$="[sort_order]"]').value = index + 1; });
+    form.querySelector('[data-newsletter-content-add]')?.addEventListener('click', () => { const [type,id] = (select.value || '').split(':'); if (!type || !id || list.querySelector(`[data-key="${type}:${id}"]`)) return; const row=document.createElement('div'); row.className='input-group mb-2'; row.dataset.contentRow=''; row.dataset.key=`${type}:${id}`; row.innerHTML=`<span class="input-group-text">${select.selectedOptions[0].textContent}</span><input type="hidden" name="contents[0][type]" value="${type}"><input type="hidden" name="contents[0][id]" value="${id}"><input class="form-control" type="number" min="1" name="contents[0][sort_order]"><button class="btn btn-outline-danger" type="button" data-content-remove>Remove</button>`; list.append(row); reindex(); });
+    list.addEventListener('click',(event)=>{const button=event.target.closest('[data-content-remove]');if(button){button.closest('[data-content-row]').remove();reindex();}});
+});

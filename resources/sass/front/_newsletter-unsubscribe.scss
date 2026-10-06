@@ -1,0 +1,23 @@
+@use 'colors' as *;
+@use 'variables' as *;
+
+.newsletter-unsubscribe-page { background: linear-gradient(180deg, $front-primary-soft, $front-surface); min-height: 620px; padding-bottom: clamp(3rem, 6vw, 5rem); }
+.newsletter-unsubscribe-page__container { max-width: $front-content-width; }
+.newsletter-unsubscribe-card { background: $front-surface; border: 1px solid $front-border; border-radius: $front-radius; box-shadow: $front-shadow; margin: clamp(2rem, 5vw, 4rem) auto 0; max-width: 700px; padding: clamp(1.35rem, 4vw, 2.5rem); }
+.newsletter-unsubscribe-card__icon { align-items: center; background: $front-primary-soft; border-radius: 50%; color: $front-primary; display: flex; font-size: 1.6rem; height: 68px; justify-content: center; margin: 0 auto 1rem; width: 68px; }
+.newsletter-unsubscribe-card__icon--success { background: #e1f5e9; color: #168348; }
+.newsletter-unsubscribe-card h1 { color: $front-primary-hover; font-size: clamp(1.6rem, 4vw, 2.15rem); font-weight: 800; text-align: center; line-height: 2.5;}
+.newsletter-unsubscribe-card > p { color: $front-muted; line-height: 2; text-align: center; }
+.newsletter-unsubscribe-card__email { background: $front-primary-soft; border-radius: $front-radius-sm; color: $front-primary-hover; font-weight: 700; margin: 1rem 0 1.5rem; padding: .75rem; text-align: center; }
+.newsletter-unsubscribe-card fieldset { border: 0; margin: 0; padding: 0; }
+.newsletter-unsubscribe-card legend { font-size: 1.05rem; font-weight: 800; margin-bottom: .7rem; }
+.newsletter-unsubscribe-reason { align-items: center; border: 1px solid $front-border; border-radius: $front-radius-sm; cursor: pointer; display: flex; gap: .7rem; margin-top: .55rem; padding: .7rem .85rem; }
+.newsletter-unsubscribe-reason:has(input:checked) { background: $front-primary-soft; border-color: $front-primary; }
+.newsletter-unsubscribe-card__submit,
+.newsletter-unsubscribe-card__home { align-items: center; background: $front-primary; border: 1px solid $front-primary; border-radius: $front-radius-sm; color: $front-white; display: inline-flex; font: inherit; font-weight: 800; gap: .55rem; justify-content: center; margin-top: 1.5rem; min-height: 48px; padding: .65rem 1.4rem; text-decoration: none; }
+.newsletter-unsubscribe-card__submit:hover,
+.newsletter-unsubscribe-card__home:hover { background: $front-primary-hover; color: $front-white; }
+
+@media (max-width: 575.98px) {
+    .newsletter-unsubscribe-card { margin-top: 1.5rem; padding: 1.15rem; }
+}

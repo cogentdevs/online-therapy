@@ -1,0 +1,71 @@
+@use 'colors' as *;
+@use 'variables' as *;
+@use 'fonts' as *;
+
+// ========================================
+// Front Footer - Main Grid
+// ========================================
+.front-footer { background: $front-dark; color: $front-white; padding-top: 2.75rem; }
+.front-footer__container { padding-inline: clamp(.75rem, 3vw, 3rem); }
+.front-footer__grid { margin-inline: 0; }
+.front-footer__column { border-inline-start: 1px solid $front-white-divider; padding-inline: clamp(1rem, 2vw, 2rem); }
+.front-footer__column:first-child { border-inline-start: 0; }
+.front-footer__brand { margin-bottom: 1rem; }
+.front-footer__brand .front-logo__mark { background: $front-primary; }
+.front-footer__brand .front-logo__image--footer { max-height: 100px; max-width: 270px; }
+.front-footer__about { color: $front-white-muted; line-height: 2.1; margin: 0 0 1rem; max-width: 30rem; }
+.front-footer__title { font-size: 1.1rem; font-weight: 700; margin-bottom: .9rem; }
+.front-footer__links { list-style: none; margin: 0; padding: 0; }
+.front-footer__links li { margin-bottom: .35rem; }
+.front-footer__links a { color: $front-white-strong-muted; }
+.front-footer__links a:hover { color: $front-white; }
+.front-footer__contact { display: grid; gap: .45rem; margin-top: .85rem; }
+.front-footer__contact a,
+.front-footer__contact p {
+    align-items: flex-start;
+    color: $front-white-strong-muted;
+    display: flex;
+    gap: .5rem;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+.front-footer__contact a:hover { color: $front-white; }
+.front-footer__contact i { color: $front-primary; margin-top: .25rem; width: 1rem; }
+
+// ========================================
+// Front Footer - Social Links
+// ========================================
+.front-socials { display: flex; flex-wrap: wrap; gap: .55rem; }
+.front-socials a {
+    align-items: center;
+    border: 1px solid $front-white-border;
+    border-radius: 50%;
+    color: $front-white;
+    display: inline-flex;
+    font-size: .82rem;
+    height: 34px;
+    justify-content: center;
+    transition: $front-transition;
+    width: 34px;
+}
+.front-socials a:hover { background: $front-primary; border-color: $front-primary; }
+
+// ========================================
+// Front Footer - App Download
+// ========================================
+.front-footer__app-text { color: $front-white-muted; line-height: 1.9; margin-bottom: .75rem; }
+.front-footer__app-badges { display: flex; flex-direction: column; gap: .55rem; }
+.front-footer__app-badges a { display: inline-flex; width: fit-content; }
+.front-footer__app-badges img { display: block; height: auto; max-width: 170px; width: 100%; }
+
+// ========================================
+// Front Footer - Copyright
+// ========================================
+.front-footer__bottom {
+    border-top: 1px solid $front-white-divider;
+    color: $front-white-soft;
+    font-family: var(--front-font-ui);
+    font-size: .75rem;
+    margin-top: 2rem;
+    padding-block: .9rem;
+}

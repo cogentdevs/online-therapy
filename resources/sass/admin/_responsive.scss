@@ -1,0 +1,73 @@
+@use 'variables' as *;
+
+@media (max-width: 991.98px) {
+    .admin-main {
+        margin-left: 0;
+    }
+
+    .admin-sidebar {
+        transform: translateX(-100%);
+        transition: transform $admin-transition;
+    }
+
+    .admin-sidebar-toggle,
+    .admin-sidebar-close {
+        display: grid;
+    }
+
+    .admin-sidebar-backdrop {
+        position: fixed;
+        z-index: 1025;
+        inset: 0;
+        display: block;
+        visibility: hidden;
+        padding: 0;
+        border: 0;
+        background: rgba(12, 13, 15, 0.48);
+        opacity: 0;
+        transition: opacity $admin-transition, visibility $admin-transition;
+    }
+
+    .admin-sidebar-open {
+        overflow: hidden;
+
+        .admin-sidebar {
+            transform: translateX(0);
+        }
+
+        .admin-sidebar-backdrop {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+@media (max-width: 575.98px) {
+    .admin-header {
+        min-height: 4.5rem;
+        padding-inline: 1rem;
+    }
+
+    .admin-profile-copy,
+    .admin-profile-toggle > svg {
+        display: none;
+    }
+
+    .admin-content {
+        padding: 1rem;
+    }
+
+    .admin-page-intro {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .admin-sidebar,
+    .admin-sidebar-backdrop,
+    .admin-nav-link,
+    .admin-nav-group summary,
+    .admin-nav-group summary svg {
+        transition: none;
+    }
+}

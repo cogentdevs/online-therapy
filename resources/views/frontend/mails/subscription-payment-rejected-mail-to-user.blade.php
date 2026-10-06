@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Payment Rejected</title></head>
+<body style="margin:0;padding:0;background:#F5F7FA;font-family:Arial,Tahoma,sans-serif;color:#242328;">
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0"><tr><td align="center" style="padding:35px 15px;">
+<table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="width:100%;max-width:600px;background:#fff;border:1px solid #DDE5EE;border-radius:10px;">
+@include('frontend.mails.partials.subscription-mail-header')
+<tr><td style="padding:34px 35px;">
+<h1 style="margin:0 0 12px;color:#17171A;font-size:24px;text-align:center;">Subscription Payment Rejected</h1>
+<p style="margin:0 0 24px;color:#737078;font-size:14px;line-height:1.8;text-align:center;">Your submitted payment could not be approved. The subscription is not active and no invoice has been issued.</p>
+<p style="font-size:15px;line-height:1.8;">Hello <strong>{{ $userSubscription->user->name }}</strong>,</p>
+<table role="presentation" width="100%" cellspacing="0" cellpadding="10" style="background:#F8FAFC;border:1px solid #DDE5EE;">
+<tr><td>Plan</td><td><strong>{{ $userSubscription->product_name }}</strong></td></tr>
+<tr><td>Amount</td><td>{{ $userSubscription->currency?->code ?: $userSubscription->currency?->symbol }} {{ number_format((float) $userSubscription->total, 2) }}</td></tr>
+<tr><td>Reviewed</td><td>{{ $userSubscription->reviewed_at?->format('d M Y, h:i A') }}</td></tr>
+<tr><td>Reason</td><td>{{ $userSubscription->rejection_reason }}</td></tr>
+</table>
+</td></tr>
+@include('frontend.mails.partials.subscription-mail-footer')
+</table></td></tr></table>
+</body></html>

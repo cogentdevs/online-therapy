@@ -1,0 +1,314 @@
+@use 'colors' as *;
+@use 'variables' as *;
+
+.front-account-page {
+    background: radial-gradient(circle at 3% 52%, rgba($front-primary, .08) 0 130px, transparent 131px), linear-gradient(135deg, $front-primary-soft, $front-surface 50%, $front-primary-soft);
+    min-height: 650px;
+    padding-block: 1.25rem 2.5rem;
+}
+
+.front-account-container { max-width: 1420px; }
+.front-account-heading { margin: .35rem auto 1.5rem; text-align: center; }
+.front-account-heading h1 { color: $front-text; font-size: clamp(1.8rem, 4vw, 2.55rem); margin: 0; }
+.front-account-heading > span { background: $front-primary; display: block; height: 3px; margin: 1.5rem auto .8rem; width: 52px; }
+.front-account-heading p { color: $front-muted; margin: 0; }
+.front-account-layout,
+.front-account-card-grid { direction: ltr; }
+.front-account-layout > *,
+.front-account-card-grid > * { direction: rtl; }
+
+.front-account-sidebar,
+.front-account-card { background: $front-surface; border: 1px solid $front-border; border-radius: $front-radius-sm; box-shadow: 0 10px 28px rgba(49, 87, 130, .08); }
+.front-account-sidebar { overflow: hidden; }
+.front-account-sidebar nav { display: grid; }
+.front-account-sidebar form { margin: 0; }
+.front-account-nav-link { align-items: center; background: $front-surface; border: 0; border-bottom: 1px solid $front-border; color: $front-text; display: grid; font: inherit; font-weight: 700; gap: .8rem; grid-template-columns: 28px 1fr; min-height: 61px; padding: .8rem 1.15rem; text-align: right; text-decoration: none; width: 100%; }
+.front-account-nav-link i { color: $front-primary; font-size: 1.05rem; text-align: center; }
+.front-account-nav-link.active { background: linear-gradient(135deg, $front-primary-hover, $front-primary); color: $front-white; }
+.front-account-nav-link.active i { color: $front-white; }
+.front-account-nav-link.is-disabled { cursor: default; opacity: .78; }
+.front-account-logout { cursor: pointer; }
+.front-account-logout:hover,
+.front-account-nav-link[href]:hover { background: $front-primary-soft; color: $front-primary-hover; }
+.front-account-nav-link.active:hover { background: linear-gradient(135deg, $front-primary-hover, $front-primary); color: $front-white; }
+.front-account-sidebar-art { min-height: 180px; overflow: hidden; padding: 1.4rem; position: relative; text-align: center; }
+.front-account-sidebar-art img { height: 140px; max-width: 100%; object-fit: contain; position: relative; z-index: 1; }
+.front-account-sidebar-art span { background: rgba($front-primary, .08); border-radius: 50%; height: 145px; left: -36px; position: absolute; top: 24px; width: 145px; }
+
+.front-account-card { height: 100%; min-height: 220px; padding: 1.5rem; }
+.front-account-summary { align-items: center; display: flex; gap: 1.4rem; }
+.front-account-avatar { background: $front-primary-soft; border-radius: 50%; flex: 0 0 132px; height: 132px; overflow: hidden; }
+.front-account-avatar img { height: 100%; object-fit: cover; width: 100%; }
+.front-account-user { min-width: 0; width: 100%; }
+.front-account-user-title { align-items: center; display: flex; flex-wrap: wrap; gap: .75rem; justify-content: space-between; }
+.front-account-user h2,
+.front-account-card h2 { color: $front-text; font-size: 1.35rem; margin: 0; }
+.front-account-user p { align-items: center; color: $front-muted; display: flex; gap: .65rem; justify-content: flex-end; margin: .8rem 0 0; overflow-wrap: anywhere; }
+.front-account-user p i { color: $front-primary; }
+.front-account-status { background: #e1f5e9; border-radius: 999px; color: #168348; font-size: .82rem; font-weight: 700; padding: .4rem .75rem; white-space: nowrap; }
+.front-account-status i { font-size: .48rem; margin-left: .35rem; }
+.front-account-card-heading { align-items: center; display: flex; gap: 1rem; }
+.front-account-card-heading small { color: $front-muted; display: block; margin-bottom: .25rem; }
+.front-account-card-icon { align-items: center; background: #fff6df; border-radius: 50%; color: #f0b622; display: inline-flex; flex: 0 0 72px; font-size: 1.8rem; height: 72px; justify-content: center; }
+.front-account-empty-card > p { color: $front-muted; margin: 1.3rem 0; }
+.front-account-outline-action { border: 1px solid $front-primary; border-radius: 7px; color: $front-primary; display: inline-flex; gap: .55rem; padding: .55rem 1rem; }
+.front-account-outline-action.is-disabled { opacity: .75; }
+.front-account-list-card { min-height: 245px; padding: 0; }
+.front-account-list-card header { align-items: center; border-bottom: 1px solid $front-border; display: flex; gap: 1rem; justify-content: space-between; padding: 1rem 1.3rem; }
+.front-account-list-card header i { color: $front-primary; margin-left: .5rem; }
+.front-account-list-card header > a { color: $front-primary; font-size: .82rem; font-weight: 700; text-decoration: none; }
+.front-account-bookmark-list { display: grid; padding: .35rem 1.3rem; }
+.front-account-bookmark-item { align-items: center; border-bottom: 1px solid $front-border; display: grid; gap: .75rem; grid-template-columns: auto minmax(0, 1fr) auto; padding: .7rem 0; }
+.front-account-bookmark-item:last-child { border-bottom: 0; }
+.front-account-bookmark-item > span:first-child,
+.front-account-bookmark-module { background: $front-primary-soft; border-radius: 999px; color: $front-primary-hover; font-size: .75rem; font-weight: 700; padding: .25rem .55rem; white-space: nowrap; }
+.front-account-bookmark-item > div { min-width: 0; }
+.front-account-bookmark-item strong { color: $front-text; display: block; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.front-account-bookmark-item strong a { color: inherit; display: block; overflow: hidden; text-decoration: none; text-overflow: ellipsis; white-space: nowrap; }
+.front-account-bookmark-item time { color: $front-muted; display: block; font-size: .75rem; margin-top: .2rem; }
+.front-account-bookmark-item > a,
+.front-account-bookmark-item > .is-unavailable { color: $front-primary; padding: .35rem; }
+.front-account-empty-state { align-items: center; color: $front-muted; display: flex; flex-direction: column; gap: .8rem; justify-content: center; min-height: 165px; padding: 1.5rem; text-align: center; }
+.front-account-empty-state > i { color: $front-primary; font-size: 2rem; opacity: .65; }
+.front-account-empty-state p { margin: 0; }
+.front-account-activity-list { display: grid; padding: .35rem 1.3rem; }
+.front-account-activity-item { align-items: center; border-bottom: 1px solid $front-border; display: grid; gap: .75rem; grid-template-columns: auto minmax(0, 1fr) auto; padding: .7rem 0; }
+.front-account-activity-item:last-child { border-bottom: 0; }
+.front-account-activity-item > span:first-child,
+.front-account-activity-module { background: $front-primary-soft; border-radius: 999px; color: $front-primary-hover; font-size: .75rem; font-weight: 700; padding: .25rem .55rem; white-space: nowrap; }
+.front-account-activity-item > div { min-width: 0; }
+.front-account-activity-item strong { color: $front-text; display: block; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.front-account-activity-item strong a { color: inherit; display: block; overflow: hidden; text-decoration: none; text-overflow: ellipsis; white-space: nowrap; }
+.front-account-activity-item time { color: $front-muted; direction: ltr; display: block; font-size: .75rem; margin-top: .2rem; text-align: right; }
+.front-account-activity-item > a,
+.front-account-activity-item > .is-unavailable { color: $front-primary; padding: .35rem; }
+.front-account-password-card { min-height: 0; padding: clamp(1.25rem, 3vw, 2rem); }
+.front-account-password-card > header { border-bottom: 1px solid $front-border; margin-bottom: 1.5rem; padding-bottom: 1rem; }
+.front-account-password-card > header h2 { margin-bottom: .45rem; }
+.front-account-password-card > header p { color: $front-muted; margin: 0; }
+.front-account-password-form { display: grid; gap: 1.15rem; max-width: 680px; }
+.front-account-profile-card { min-height: 0; padding: clamp(1.25rem, 3vw, 2rem); }
+.front-account-profile-card > header { border-bottom: 1px solid $front-border; margin-bottom: 1.5rem; padding-bottom: 1rem; }
+.front-account-profile-card > header h2 { margin-bottom: .45rem; }
+.front-account-profile-card > header p { color: $front-muted; margin: 0; }
+.front-account-profile-form { display: grid; gap: 1.15rem; max-width: 680px; }
+.front-account-profile-image { align-items: center; display: flex; gap: 1.25rem; }
+.front-account-profile-image img { border: 4px solid $front-primary-soft; border-radius: 50%; height: 120px; object-fit: cover; width: 120px; }
+.front-account-profile-image > div { align-items: flex-start; display: flex; flex-wrap: wrap; gap: .65rem; }
+.front-account-profile-image input[type='file'] { height: 1px; opacity: 0; overflow: hidden; position: absolute; width: 1px; }
+.front-account-profile-image small { color: $front-muted; flex-basis: 100%; }
+.front-account-image-picker,
+.front-account-image-remove { border: 1px solid $front-primary; border-radius: $front-radius-sm; cursor: pointer; font: inherit; padding: .55rem .9rem; }
+.front-account-image-picker { background: $front-primary; color: $front-white; }
+.front-account-image-remove { background: $front-surface; color: $front-primary; }
+.front-account-security-card { min-height: 0; padding: clamp(1.25rem, 3vw, 2rem); }
+.front-account-security-card > header { align-items: center; border-bottom: 1px solid $front-border; display: flex; justify-content: space-between; margin-bottom: 1.5rem; padding-bottom: 1rem; }
+.front-account-security-card > header p,
+.front-account-security-enabled p { color: $front-muted; margin: .35rem 0 0; }
+.front-account-status.is-off { background: #f6e9e9; color: #a43d3d; }
+.front-account-security-form { display: grid; gap: 1rem; max-width: 720px; }
+.front-account-method-option { align-items: center; border: 1px solid $front-border; border-radius: $front-radius-sm; cursor: pointer; display: flex; gap: 1rem; padding: 1rem; }
+.front-account-method-option input { accent-color: $front-primary; }
+.front-account-method-option > i { color: $front-primary; font-size: 1.5rem; }
+.front-account-method-option span { display: grid; gap: .2rem; }
+.front-account-method-option small { color: $front-muted; }
+.front-account-method-option.is-disabled { cursor: not-allowed; opacity: .6; }
+.front-account-security-enabled { align-items: center; background: $front-primary-soft; border-radius: $front-radius-sm; display: flex; gap: 1rem; padding: 1.2rem; }
+.front-account-security-enabled > i { color: #168348; font-size: 2rem; }
+.front-account-otp-form { display: grid; gap: 1rem; max-width: 520px; }
+.front-account-otp-form input { font-size: 1.3rem; letter-spacing: .45rem; text-align: center !important; }
+.front-account-resend-form { margin-top: 1rem; }
+.front-account-resend-form button { background: transparent; border: 0; color: $front-primary; font-weight: 700; padding: .4rem 0; }
+.front-account-two-factor-actions { display: grid; gap: 1.25rem; margin-top: 1.25rem; }
+.front-account-two-factor-actions > section { border: 1px solid $front-border; border-radius: $front-radius-sm; padding: 1.2rem; }
+.front-account-two-factor-actions h3 { font-size: 1.15rem; margin-bottom: .8rem; }
+.front-account-two-factor-actions p,
+.front-account-security-enabled small { color: $front-muted; }
+.front-account-danger-action { background: #fff; border: 1px solid #b33d3d; border-radius: $front-radius-sm; color: #a12f2f; font-weight: 700; min-height: 46px; padding: .65rem 1rem; }
+
+.front-account-subscription-summary { height: auto; }
+.front-account-subscription-summary .front-account-outline-action { margin-top: auto; text-decoration: none; }
+.front-account-subscription-count { align-items: baseline; color: $front-primary-hover; display: flex; gap: .4rem; margin-top: 1rem; }
+.front-account-subscription-count strong { font: 800 1.35rem/1 sans-serif; }
+.front-account-subscription-count span { font-weight: 700; }
+.front-account-active-access,
+.front-account-active-packages { border-top: 1px solid $front-border; margin-top: .85rem; padding-top: .85rem; }
+.front-account-active-access h3,
+.front-account-active-packages h3 { color: $front-text; font-size: 1rem; font-weight: 800; margin: 0 0 .65rem; }
+.front-account-active-modules { display: flex; flex-wrap: wrap; gap: .45rem; }
+.front-account-active-modules span { align-items: center; background: #e1f5e9; border-radius: 999px; color: #168348; display: inline-flex; font-size: .82rem; font-weight: 700; gap: .35rem; padding: .35rem .65rem; }
+.front-account-active-list { display: grid; gap: .65rem; margin: 1rem 0; }
+.front-account-active-item { background: $front-primary-soft; border-radius: $front-radius-sm; padding: .7rem .8rem; }
+.front-account-active-item strong { color: $front-text; overflow-wrap: anywhere; }
+.front-account-active-item small { color: $front-muted; display: block; margin-top: .35rem; }
+.front-account-active-item small b { color: $front-primary-hover; }
+.front-account-active-more { color: $front-muted; font-size: .85rem; margin: -.2rem 0 .8rem; }
+
+.user-subscription-history { height: auto; min-height: 0; padding: clamp(1.25rem, 3vw, 2rem); }
+.user-subscriptions-section-header { align-items: center; border-bottom: 1px solid $front-border; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; margin-bottom: 1.25rem; padding-bottom: 1rem; }
+.user-subscriptions-section-header p { color: $front-muted; margin: .4rem 0 0; }
+.user-subscriptions-section-header > a { color: $front-primary; font-weight: 700; text-decoration: none; }
+.user-subscriptions-section-header > a i { margin-right: .35rem; }
+.user-subscription-status { background: #eef1f5; border-radius: 999px; color: $front-muted; flex: 0 0 auto; font-size: .78rem; font-weight: 700; padding: .35rem .65rem; }
+.user-subscription-status.is-active { background: #e1f5e9; color: #168348; }
+.user-subscription-status.is-expired { background: #f6e9e9; color: #a43d3d; }
+.user-subscription-status.is-future { background: #fff6df; color: #9a6b00; }
+.user-subscription-modules { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0; }
+.user-subscription-modules span { align-items: center; background: $front-primary-soft; border-radius: 999px; color: $front-primary-hover; display: inline-flex; font-size: .82rem; gap: .4rem; padding: .35rem .65rem; }
+.user-subscription-modules span.is-empty { color: $front-muted; }
+.user-subscriptions-empty { align-items: center; color: $front-muted; display: flex; flex-direction: column; gap: .85rem; justify-content: center; min-height: 190px; text-align: center; }
+.user-subscriptions-empty > i { color: $front-primary; font-size: 2rem; opacity: .7; }
+.user-subscriptions-empty p { margin: 0; }
+.user-subscriptions-empty .front-account-outline-action { text-decoration: none; }
+.user-subscriptions-pagination { direction: ltr; display: flex; justify-content: center; margin-top: 1.5rem; }
+.user-subscription-history-table-wrap { border: 1px solid $front-border; border-radius: $front-radius-sm; }
+.user-subscription-history-table { margin: 0; min-width: 900px; }
+.user-subscription-history-table th { background: $front-primary-soft; color: $front-text; font-weight: 700; white-space: nowrap; }
+.user-subscription-history-table td,
+.user-subscription-history-table th { border-color: $front-border; padding: .9rem; text-align: right; }
+.user-subscription-history-table td > strong,
+.user-subscription-history-table td > small { display: block; }
+
+.front-ad-request-card { height: auto; min-height: 0; padding: clamp(1.25rem, 3vw, 2rem); }
+.front-ad-request-item + .front-ad-request-item,
+.front-ad-request-placement + .front-ad-request-placement { border-top: 1px solid $front-border; margin-top: 1.25rem; padding-top: 1.25rem; }
+.front-ad-request-item__heading { align-items: center; display: flex; flex-wrap: wrap; gap: .75rem; justify-content: space-between; margin-bottom: .75rem; }
+.front-ad-request-item__heading strong { color: $front-primary-hover; font-size: 1.1rem; }
+.front-ad-request-item__heading h3 { color: $front-text; font-size: 1.1rem; margin: 0; overflow-wrap: anywhere; }
+.front-ad-request-badge { background: $front-primary-soft; border-radius: 999px; color: $front-primary-hover; font-size: .85rem; font-weight: 700; padding: .35rem .75rem; }
+.front-ad-request-facts { color: $front-muted; display: flex; flex-wrap: wrap; gap: .45rem 1.5rem; margin-bottom: .9rem; }
+.front-ad-request-facts span { overflow-wrap: anywhere; }
+.front-ad-request-card .front-account-outline-action { text-decoration: none; }
+.front-ad-request-detail-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0; }
+.front-ad-request-detail-grid > div { min-width: 0; }
+.front-ad-request-detail-grid dt { color: $front-muted; font-size: .86rem; font-weight: 600; margin-bottom: .2rem; }
+.front-ad-request-detail-grid dd { color: $front-text; margin: 0; overflow-wrap: anywhere; text-align: right; }
+.front-ad-request-detail-grid__full { grid-column: 1 / -1; }
+.front-ad-request-message { white-space: pre-line; }
+.front-ad-request-placements { margin-top: 1.25rem; }
+.front-ad-request-linked-ad { background: $front-primary-soft; border-radius: $front-radius-sm; margin-top: .9rem; padding: 1rem; }
+.front-ad-request-linked-ad h4 { color: $front-primary-hover; font-size: 1rem; margin: 0 0 .8rem; }
+.front-ad-request-note { color: $front-muted; margin: .8rem 0 0; }
+
+@media (max-width: 575.98px) {
+    .front-ad-request-detail-grid { grid-template-columns: 1fr; }
+    .front-ad-request-item__heading { align-items: flex-start; }
+}
+.user-subscription-history-table td > small { color: $front-muted; margin-top: .25rem; white-space: nowrap; }
+.user-subscription-history-table .user-subscription-modules { margin: 0; min-width: 180px; }
+
+.front-account-bookmarks { height: auto; min-height: 0; padding: clamp(1.25rem, 3vw, 2rem); }
+.front-account-bookmarks__header { border-bottom: 1px solid $front-border; margin-bottom: 1.25rem; padding-bottom: 1rem; }
+.front-account-bookmarks__header p { color: $front-muted; margin: .4rem 0 0; }
+.front-account-bookmarks__empty { align-items: center; color: $front-muted; display: flex; flex-direction: column; gap: .85rem; justify-content: center; min-height: 220px; text-align: center; }
+.front-account-bookmarks__empty > i { color: $front-primary; font-size: 2rem; opacity: .7; }
+.front-account-bookmarks__empty p { margin: 0; }
+.front-account-bookmarks__list { border: 1px solid $front-border; border-radius: $front-radius-sm; overflow: hidden; }
+.front-account-bookmarks__labels,
+.front-account-bookmarks__item { align-items: center; display: grid; gap: 1rem; grid-template-columns: 100px minmax(180px, 1fr) 140px 80px 90px; padding: .85rem 1rem; }
+.front-account-bookmarks__labels { background: $front-primary-soft; color: $front-text; font-weight: 700; }
+.front-account-bookmarks__item { border-top: 1px solid $front-border; }
+.front-account-bookmarks__item strong { color: $front-text; overflow-wrap: anywhere; }
+.front-account-bookmarks__item time { color: $front-muted; direction: ltr; text-align: right; }
+.front-account-bookmark-view { color: $front-primary; font-weight: 700; text-decoration: none; }
+.front-account-bookmark-unavailable { color: $front-muted; font-size: .8rem; }
+.front-account-bookmark-remove { background: transparent; border: 0; color: #a12f2f; font: inherit; font-weight: 700; padding: .35rem 0; }
+.front-account-bookmark-remove:disabled { cursor: wait; opacity: .6; }
+
+.front-account-activities { height: auto; min-height: 0; padding: clamp(1.25rem, 3vw, 2rem); }
+.front-account-activities__header { border-bottom: 1px solid $front-border; margin-bottom: 1.25rem; padding-bottom: 1rem; }
+.front-account-activities__header p { color: $front-muted; margin: .4rem 0 0; }
+.front-account-activities__empty { align-items: center; color: $front-muted; display: flex; flex-direction: column; gap: .85rem; justify-content: center; min-height: 220px; text-align: center; }
+.front-account-activities__empty > i { color: $front-primary; font-size: 2rem; opacity: .7; }
+.front-account-activities__empty p { margin: 0; }
+.front-account-activities__list { border: 1px solid $front-border; border-radius: $front-radius-sm; overflow: hidden; }
+.front-account-activities__labels,
+.front-account-activities__item { align-items: center; display: grid; gap: 1rem; grid-template-columns: 100px minmax(180px, 1fr) 180px 80px; padding: .85rem 1rem; }
+.front-account-activities__labels { background: $front-primary-soft; color: $front-text; font-weight: 700; }
+.front-account-activities__item { border-top: 1px solid $front-border; }
+.front-account-activities__item strong { color: $front-text; overflow-wrap: anywhere; }
+.front-account-activities__item time { color: $front-muted; direction: ltr; text-align: right; }
+.front-account-activity-view { color: $front-primary; font-weight: 700; text-decoration: none; }
+.front-account-activity-unavailable { color: $front-muted; font-size: .8rem; }
+.front-account-datatable-title { -webkit-box-orient: vertical; display: -webkit-box; -webkit-line-clamp: 1;; overflow: hidden; }
+.front-account-activity-time { align-items: center; display: inline-flex; flex-direction: column; line-height: 1.45; white-space: nowrap; }
+
+.front-account-listing-table-wrap { padding: 0 1.3rem 1.3rem; }
+.front-account-listing-table { margin: 0 !important; width: 100% !important; }
+.front-account-listing-table thead th { background: $front-primary-soft; border-color: $front-border; color: $front-text; font-weight: 700; padding: .85rem; text-align: right; white-space: nowrap; }
+.front-account-listing-table tbody td { border-color: $front-border; padding: .85rem; text-align: right; vertical-align: middle; }
+.front-account-listing-table tbody tr:hover { background: rgba($front-primary, .035); }
+.front-account-listing-table .front-account-outline-action { margin: 0; white-space: nowrap; }
+.front-account-listing-table-wrap + .dt-container,
+.front-account-listing-table-wrap .dt-container { direction: rtl; }
+.front-account-card .dt-container { padding: 0 1.3rem 1.3rem; }
+.front-account-card .dt-container .dt-layout-row { align-items: center; gap: .75rem; margin: .8rem 0; }
+.front-account-card .dt-container .dt-search,
+.front-account-card .dt-container .dt-length { align-items: center; display: flex; gap: .45rem; }
+.front-account-card .dt-container .dt-input { border: 1px solid $front-border; border-radius: $front-radius-sm; min-height: 38px; }
+
+[data-front-account-datatable='bookmarks'],
+[data-front-account-datatable='activities'] { width: 100% !important; }
+[data-front-account-datatable='bookmarks'] th,
+[data-front-account-datatable='bookmarks'] td,
+[data-front-account-datatable='activities'] th,
+[data-front-account-datatable='activities'] td { vertical-align: middle; }
+[data-front-account-datatable='bookmarks'] th:nth-child(1),
+[data-front-account-datatable='bookmarks'] td:nth-child(1),
+[data-front-account-datatable='activities'] th:nth-child(1),
+[data-front-account-datatable='activities'] td:nth-child(1) { width: 12%; }
+[data-front-account-datatable='bookmarks'] th:nth-child(2),
+[data-front-account-datatable='bookmarks'] td:nth-child(2) { width: 38%; }
+[data-front-account-datatable='activities'] th:nth-child(2),
+[data-front-account-datatable='activities'] td:nth-child(2) { width: 43%; }
+[data-front-account-datatable='bookmarks'] th:nth-child(3),
+[data-front-account-datatable='bookmarks'] td:nth-child(3) { width: 20%; }
+[data-front-account-datatable='activities'] th:nth-child(3),
+[data-front-account-datatable='activities'] td:nth-child(3) { width: 27%; }
+[data-front-account-datatable='bookmarks'] th:nth-child(4),
+[data-front-account-datatable='bookmarks'] td:nth-child(4),
+[data-front-account-datatable='bookmarks'] th:nth-child(5),
+[data-front-account-datatable='bookmarks'] td:nth-child(5) { text-align: center; width: 15%; }
+[data-front-account-datatable='activities'] th:nth-child(4),
+[data-front-account-datatable='activities'] td:nth-child(4) { text-align: center; width: 18%; }
+
+@media (max-width: 767.98px) {
+    .front-account-listing-table-wrap { padding-inline: .75rem; }
+    .front-account-card .dt-container { padding-inline: .75rem; }
+    .front-account-card .dt-container .dt-layout-row { align-items: stretch; flex-direction: column; }
+    .front-account-card .dt-container .dt-layout-cell { text-align: right !important; }
+    .front-account-card .dt-container .dt-search,
+    .front-account-card .dt-container .dt-length { justify-content: space-between; }
+
+    [data-front-account-datatable='bookmarks'] th,
+    [data-front-account-datatable='bookmarks'] td,
+    [data-front-account-datatable='activities'] th,
+    [data-front-account-datatable='activities'] td { width: auto; }
+}
+
+@media (max-width: 767.98px) {
+    .front-account-bookmarks__labels { display: none; }
+    .front-account-bookmarks__item { align-items: start; gap: .65rem; grid-template-columns: 1fr auto; }
+    .front-account-bookmarks__item > .front-account-bookmark-module,
+    .front-account-bookmarks__item > strong,
+    .front-account-bookmarks__item > time { grid-column: 1 / -1; }
+    .front-account-activities__labels { display: none; }
+    .front-account-activities__item { align-items: start; gap: .65rem; grid-template-columns: 1fr auto; }
+    .front-account-activities__item > .front-account-activity-module,
+    .front-account-activities__item > strong,
+    .front-account-activities__item > time { grid-column: 1 / -1; }
+}
+
+@media (max-width: 1199.98px) {
+    .front-account-card { min-height: 205px; }
+}
+
+@media (max-width: 575.98px) {
+    .front-account-page { padding-bottom: 1.5rem; }
+    .front-account-card { padding: 1.15rem; }
+    .front-account-summary { align-items: flex-start; flex-direction: column; }
+    .front-account-avatar { align-self: center; flex-basis: 108px; height: 108px; width: 108px; }
+    .front-account-user-title { justify-content: center; text-align: center; }
+    .front-account-user p { justify-content: center; }
+    .front-account-profile-image { align-items: flex-start; flex-direction: column; }
+}

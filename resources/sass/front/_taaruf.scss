@@ -1,0 +1,38 @@
+@use 'colors' as *;
+@use 'variables' as *;
+
+.front-taaruf { padding-block: 1.5rem 3rem; }
+.front-taaruf__container { max-width: none; padding-inline: clamp(.75rem, 2.5vw, 2.5rem); }
+.front-taaruf__page-heading { margin: 1rem auto 2rem; text-align: center; }
+.front-taaruf__page-heading h1 { font-size: clamp(2rem, 4vw, 3rem); margin: 0; }
+.front-taaruf__page-heading span { background: $front-primary; display: block; height: 2px; margin: .5rem auto 0; width: 48px; }
+.front-taaruf__sections { display: grid; gap: clamp(1.25rem, 3vw, 2.5rem); }
+.front-taaruf__section { background: transparent; border: 0; border-radius: 0; box-shadow: none; overflow: visible; padding: 0; }
+.front-taaruf__section--text { text-align: center; }
+.front-taaruf__heading { color: $front-text; font-size: clamp(1.5rem, 3vw, 2.15rem); line-height: 1.55; margin: 0 0 1rem; }
+.front-taaruf__heading::after { background: $front-primary; content: ''; display: block; height: 2px; margin-top: .45rem; width: 42px; }
+.front-taaruf__section--text .front-taaruf__heading::after { margin-inline: auto; }
+.front-taaruf__html { color: $front-muted; line-height: 2; overflow-wrap: anywhere; }
+.front-taaruf__html--centered { margin-inline: 0; max-width: none; width: 100%; }
+.front-taaruf__html > :last-child { margin-bottom: 0; }
+.front-taaruf__html img { height: auto; max-width: 100%; }
+.front-taaruf__media { align-self: stretch; }
+.front-taaruf__image { border-radius: $front-radius-sm; display: block; height: auto; max-width: 100%; width: 100%; }
+.front-taaruf__section--3 .front-taaruf__media .front-taaruf__image,
+.front-taaruf__section--4 .front-taaruf__media .front-taaruf__image { height: 100%; min-height: 260px; object-fit: cover; }
+.front-taaruf__media-only { padding: 0; }
+.front-taaruf__media-only .front-taaruf__image { border-radius: $front-radius; }
+.front-taaruf__two-column .front-taaruf__content { border-inline-start: 2px solid $front-primary-soft; }
+.front-taaruf__empty { background: $front-light; border: 1px solid $front-border; border-radius: $front-radius; color: $front-muted; padding: 2rem; text-align: center; }
+
+@media (max-width: 991.98px) {
+    .front-taaruf__section--3 .front-taaruf__media .front-taaruf__image,
+    .front-taaruf__section--4 .front-taaruf__media .front-taaruf__image { height: auto; min-height: 0; }
+    .front-taaruf__two-column .front-taaruf__content { border-inline-start: 0; }
+}
+
+@media (max-width: 575.98px) {
+    .front-taaruf { padding-block: 1rem 2rem; }
+    .front-taaruf__page-heading { margin-bottom: 1.25rem; }
+    .front-taaruf__section { padding: 0; }
+}

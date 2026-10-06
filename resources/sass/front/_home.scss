@@ -1,0 +1,308 @@
+@use 'colors' as *;
+@use 'variables' as *;
+@use 'fonts' as *;
+
+// ========================================
+// Home Hero - Slider & Selected Articles
+// ========================================
+.front-hero { padding-block: 1.5rem 1rem; }
+.front-home-section-spacing { padding-top: 20px; padding-bottom: 40px; }
+.front-home-heading--left { text-align: left; }
+.front-home-heading--center { text-align: center; }
+.front-home-heading--right { text-align: right; }
+.front-latest__heading > [class*='front-home-heading--'],
+.front-audio-area__heading > [class*='front-home-heading--'] { flex: 1; }
+.front-section-heading.front-home-heading--left .front-section-heading__line { margin-left: 0; margin-right: auto; }
+.front-section-heading.front-home-heading--center .front-section-heading__line { margin-inline: auto; }
+.front-section-heading.front-home-heading--right .front-section-heading__line { margin-left: auto; margin-right: 0; }
+.front-section-heading__detail { margin: .35rem 0 0; }
+.front-hero__container { padding-inline: clamp(.65rem, 1.5vw, 1.5rem); }
+.front-hero-carousel,
+.front-hero-carousel .carousel-inner,
+.front-hero-carousel .carousel-item,
+.front-latest { height: clamp(490px, 40vw, 590px); }
+.front-hero-carousel { border-radius: $front-radius-lg; box-shadow: $front-shadow-sm; overflow: hidden; }
+.front-hero-carousel .carousel-item { position: relative; }
+.front-hero-carousel .carousel-item::after {
+    background: linear-gradient(90deg, $front-overlay, transparent 78%);
+    content: '';
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+.front-hero-carousel .carousel-item > a,
+.front-hero-carousel .carousel-item > a img { display: block; height: 100%; width: 100%; }
+
+// ========================================
+// Home Hero - Slider Content Positions
+// ========================================
+.front-slider-content {
+    bottom: auto;
+    display: flex;
+    flex-direction: column;
+    inset-inline: 7% auto;
+    left: auto;
+    max-width: min(56%, 560px);
+    padding: 0;
+    right: auto;
+    margin-right: 80px;
+    text-align: right;
+    top: auto;
+    transform: none;
+    z-index: 2;
+}
+.front-slider-content--top { top: 10%; }
+.front-slider-content--center { top: 50%; transform: translateY(-50%); }
+.front-slider-content--bottom { bottom: 11%; }
+.front-slider-content .front-tag { align-self: flex-start; margin-bottom: .75rem; }
+.front-slider-content h2 { color: $front-dark; font-size: clamp(1.45rem, 2vw, 2.15rem); font-weight: 700; line-height: 1.75; margin: 0 0 .55rem; }
+.front-slider-content h2 a { color: inherit; }
+.front-slider-content p { color: $front-dark; font-size: clamp(.88rem, 1.15vw, 1.05rem); line-height: 2; margin: 0 0 1rem; }
+.front-slider-content__button {
+    align-items: center;
+    align-self: flex-start;
+    background: $front-accent;
+    border-radius: $front-radius-sm;
+    color: $front-white;
+    display: inline-flex;
+    gap: .55rem;
+    padding: .65rem 1.15rem;
+}
+.front-slider-content__button:hover { background: $front-accent-hover; color: $front-white; }
+.front-slider-content__button:active { background: $front-accent-active; }
+
+// ========================================
+// Home Hero - Carousel Controls
+// ========================================
+.front-hero-carousel .carousel-control-next,
+.front-hero-carousel .carousel-control-prev { opacity: 1; width: 8%; z-index: 3; }
+.front-hero-carousel .carousel-control-next-icon,
+.front-hero-carousel .carousel-control-prev-icon {
+    background-color: $front-overlay;
+    background-size: 42%;
+    border-radius: 50%;
+    height: 42px;
+    width: 42px;
+}
+.front-hero-carousel .carousel-indicators { bottom: .8rem; gap: .45rem; margin-bottom: 0; z-index: 3; }
+.front-hero-carousel .carousel-indicators [data-bs-target] {
+    background-color: $front-white;
+    border: 0;
+    border-radius: 50%;
+    height: 10px;
+    margin: 0;
+    opacity: .55;
+    width: 10px;
+}
+.front-hero-carousel .carousel-indicators .active { background-color: $front-primary; opacity: 1; }
+
+// ========================================
+// Home Hero - Selected Articles Panel
+// ========================================
+.front-latest { border: 1px solid $front-border; border-radius: $front-radius-lg; overflow: hidden; padding: 1rem 1.15rem; }
+.front-latest__heading { align-items: center; border-bottom: 2px solid $front-primary; display: flex; justify-content: space-between; margin-bottom: 0; padding-bottom: .7rem; }
+.front-latest__heading h2 { color: $front-primary; font-size: 1.35rem; margin: 0; }
+.front-latest-item { align-items: center; border-bottom: 1px solid $front-border; display: grid; gap: 1rem; grid-template-columns: 132px minmax(0, 1fr); min-height: calc((100% - 54px) / 3); padding-block: .8rem; }
+.front-latest-item--without-image { grid-template-columns: minmax(0, 1fr); }
+.front-latest-item:last-child { border-bottom: 0; }
+.front-latest-item__image { display: block; }
+.front-latest-item img { border-radius: $front-radius-sm; height: 112px; object-fit: cover; width: 132px; }
+.front-latest-item h3 { font-size: clamp(.9rem, 1.15vw, 1.05rem); font-weight: 700; line-height: 2.5; margin: .15rem 0 .3rem; }
+.front-latest-item__date { color: $front-muted; display: block; font-size: .72rem; }
+.front-home-cards__container { padding-inline: clamp(.65rem, 1.5vw, 1.5rem); }
+.front-home-card__title--left { text-align: left; }
+.front-home-card__title--center { text-align: center; }
+.front-home-card__title--right { text-align: right; }
+.front-home-cards__container .front-card__title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.front-home-card__media { align-items: center; display: flex; justify-content: center; overflow: hidden; }
+.front-home-card__media--cover { aspect-ratio: 16 / 10; }
+.front-home-card__media--contain { padding: 1rem 1.15rem; }
+.front-home-card__image--contain { height: auto; max-height: 110px; max-width: 82%; object-fit: contain; width: auto; }
+.front-home-card__image--cover { height: 100%; object-fit: cover; width: 100%; }
+.front-home-card__description {
+    color: $front-muted;
+    display: -webkit-box;
+    font-size: .9rem;
+    line-clamp: 3;
+    line-height: 1.9;
+    margin: .45rem 0 0;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+.front-home-ads__container { padding-inline: clamp(.65rem, 1.5vw, 1.5rem); }
+.front-ad-slot { overflow: hidden; }
+.front-ad-slot--horizontal { height: $front-horizontal-ad-height; }
+.front-ad-slot--home { height: 150px; }
+.front-ad-slot--side { min-height: 330px; }
+// ========================================
+// Home Editorial + Weekly Magazine Section
+// ========================================
+.front-editorial-magazine__container { padding-inline: clamp(.65rem, 1.5vw, 1.5rem); }
+.front-editorial-block,
+.front-weekly-card { border: 1px solid $front-border; border-radius: $front-radius-lg; height: 100%; padding: 1rem; }
+.front-editorial-block__heading,
+.front-weekly-card > h2 { color: $front-primary; font-size: 1.35rem; margin: 0 0 .8rem; }
+
+// ========================================
+// Home Editorial Feature
+// ========================================
+.front-editorial-main { border: 1px solid $front-border; border-radius: $front-radius; height: 100%; overflow: hidden; }
+.front-editorial-main__image { display: block; height: 310px; overflow: hidden; position: relative; }
+.front-editorial-main__image::after { background: linear-gradient(0deg, $front-overlay, transparent 64%); content: ''; inset: 0; position: absolute; }
+.front-editorial-main__image img { height: 100%; width: 100%; }
+.front-editorial-main__image h3 { bottom: 0; color: $front-white; font-size: clamp(1.3rem, 2vw, 1.8rem); inset-inline: 1.1rem; line-height: 2.5; margin: 0; position: absolute; z-index: 1; }
+.front-editorial-main__body { padding: 1rem; }
+.front-editorial-main__body p { color: $front-muted; line-height: 1.9; margin-bottom: .8rem; }
+.front-editorial-main__button { background: $front-accent; border-radius: $front-radius-sm; color: $front-white; display: inline-block; padding: .55rem 1rem; }
+.front-editorial-main__button:hover { background: $front-accent-hover; color: $front-white; }
+.front-editorial-main__button:active { background: $front-accent-active; }
+
+// ========================================
+// Home Compact Articles
+// ========================================
+.front-editorial-list { display: grid; gap: .75rem; }
+.front-editorial-item { align-items: center; border: 1px solid $front-border; border-radius: $front-radius-sm; display: grid; gap: .8rem; grid-template-columns: 94px minmax(0, 1fr); padding: .7rem; }
+.front-editorial-item img { border-radius: $front-radius-sm; height: 82px; object-fit: cover; width: 94px; }
+.front-editorial-item h3 { font-size: .88rem; line-height: 2; margin: .1rem 0; }
+.front-editorial-item time { color: $front-muted; font-size: .7rem; }
+.front-article-title-clamp,
+.front-article-description-clamp {
+    display: -webkit-box;
+    line-clamp: 2;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+// ========================================
+// Home Weekly Magazine Card
+// ========================================
+.front-weekly-card { display: flex; flex-direction: column; text-align: center; }
+.front-weekly-card__cover { align-self: center; height: min(430px, 54vw); max-width: 100%; object-fit: contain; width: auto; }
+.front-weekly-card h3 { font-size: 1rem; line-height: 1.8; margin: .75rem 0; }
+.front-weekly-card__button { background: $front-accent; border-radius: $front-radius-sm; color: $front-white; display: block; margin-top: auto; padding: .7rem 1rem; width: 100%; }
+.front-weekly-card__button:hover { background: $front-accent-hover; color: $front-white; }
+.front-weekly-card__button:active { background: $front-accent-active; }
+// ========================================
+// Home Audio Interviews + Newsletter
+// ========================================
+.front-most-viewed__container { padding-inline: clamp(.65rem, 1.5vw, 1.5rem); }
+.front-most-viewed__header { align-items: center; border-bottom: 2px solid $front-primary; display: flex; justify-content: space-between; margin-bottom: 1rem; }
+.front-most-viewed__header h2 { align-items: center; background: $front-primary; border-radius: $front-radius-sm $front-radius-sm 0 0; color: $front-white; display: inline-flex; font-size: 1.35rem; gap: .6rem; margin: 0; padding: .65rem 1.2rem; }
+.front-most-viewed__tabs { align-self: stretch; direction: rtl; }
+.front-most-viewed__tabs .nav-link { border: 1px solid $front-border; border-bottom: 0; border-radius: $front-radius-sm $front-radius-sm 0 0; color: $front-dark; min-width: 105px; }
+.front-most-viewed__tabs .nav-link.active { background: $front-primary; border-color: $front-primary; color: $front-white; }
+.front-most-viewed__carousel { position: relative; }
+.front-most-viewed__track { display: grid; gap: 1rem; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.front-most-viewed-card { background: $front-surface; border: 1px solid $front-border; border-radius: $front-radius; min-width: 0; overflow: hidden; }
+.front-most-viewed-card__media { aspect-ratio: 4 / 3; display: block; overflow: hidden; }
+.front-most-viewed-card__media--magazine { aspect-ratio: 3 / 4; }
+.front-most-viewed-card__media img { height: 100%; object-fit: cover; width: 100%; }
+.front-most-viewed-card__fallback { align-items: center; color: $front-muted; display: flex; font-size: 2.5rem; height: 100%; justify-content: center; width: 100%; }
+.front-most-viewed-card__body { display: flex; flex-direction: column; gap: .35rem; padding: .8rem .9rem; }
+.front-most-viewed-card__body h3 { font-size: 1.05rem; line-height: 1.7; margin: 0; }
+.front-most-viewed-card__body time,
+.front-most-viewed-card__body p { color: $front-muted; font-size: .76rem; margin: 0; }
+.front-most-viewed-card__category { color: $front-primary; font-size: .72rem; }
+.front-most-viewed-card__views { align-items: center; color: $front-primary; direction: ltr; display: inline-flex; font-size: .88rem; gap: .4rem; justify-content: flex-end; margin-top: .2rem; }
+.front-most-viewed__control { display: none; }
+.front-most-viewed__empty { border: 1px solid $front-border; border-radius: $front-radius; color: $front-muted; margin: 0; padding: 1.25rem; text-align: center; }
+
+.front-audio-newsletter { background: $front-surface; }
+.front-audio-newsletter__container { padding-inline: clamp(.65rem, 1.5vw, 1.5rem); }
+.front-audio-area,
+.front-newsletter { height: 100%; }
+.front-audio-area__heading { align-items: center; border-bottom: 1px solid $front-border; display: flex; justify-content: space-between; margin-bottom: .65rem; padding-bottom: .4rem; }
+.front-audio-area__heading h2 { color: $front-primary; font-size: 1.35rem; margin: 0; }
+
+// ========================================
+// Home Audio Interview Cards
+// ========================================
+.front-audio-interview-card { background: $front-surface; border: 1px solid $front-border; border-radius: $front-radius; height: 100%; overflow: hidden; }
+.front-audio-interview-card__media { aspect-ratio: 16 / 9; display: block; overflow: hidden; position: relative; }
+.front-audio-interview-card__media::after { background: $front-overlay-light; content: ''; inset: 0; position: absolute; }
+.front-audio-interview-card__media img { height: 100%; object-fit: cover; width: 100%; }
+.front-audio-interview-card__play { align-items: center; background: $front-white; border-radius: 50%; color: $front-dark; display: flex; height: 38px; justify-content: center; left: 50%; position: absolute; top: 50%; transform: translate(-50%, -50%); width: 38px; z-index: 1; }
+.front-audio-interview-card__play i { font-size: .8rem; margin-inline-start: .15rem; }
+.front-audio-interview-card__duration { bottom: .55rem; color: $front-white; font-size: .72rem; inset-inline-end: .65rem; position: absolute; z-index: 1; }
+.front-audio-interview-card__body { padding: .6rem .75rem; }
+.front-audio-interview-card__body h3 { font-size: .9rem; line-height: 1.75; margin: 0 0 .25rem; }
+.front-audio-interview-card__body time { color: $front-muted; font-size: .7rem; }
+
+// ========================================
+// Home Newsletter Subscribe
+// ========================================
+.front-newsletter { background: $front-dark; border-radius: $front-radius-lg; color: $front-white; min-height: 100%; overflow: hidden; padding: 1.1rem 1.2rem; position: relative; }
+.front-newsletter__content { max-width: 82%; position: relative; z-index: 1; }
+.front-newsletter h2 { font-size: 1.35rem; line-height: 1.8; margin-bottom: .45rem; }
+.front-newsletter p { color: $front-white-muted; font-size: .85rem; line-height: 1.8; margin-bottom: .75rem; }
+.front-newsletter__form { display: grid; gap: .65rem; }
+.front-newsletter__form .form-control { border: 0; min-height: 42px; }
+.front-newsletter__button { background: $front-accent; border: 0; border-radius: $front-radius-sm; color: $front-white; justify-self: start; padding: .6rem 1rem; }
+.front-newsletter__button:hover { background: $front-accent-hover; }
+.front-newsletter__button:active { background: $front-accent-active; }
+.front-newsletter__visual { bottom: -.8rem; color: $front-primary; font-size: 5.25rem; opacity: .9; position: absolute; right: .8rem; transform: rotate(-8deg); }
+
+// ========================================
+// Home Banners + Login Section
+// ========================================
+.front-home-banners-login__container { padding-inline: clamp(.65rem, 1.5vw, 1.5rem); }
+.front-home-banners-login__banners,
+.front-home-banners-login__banners > div,
+.front-home-banner,
+.front-home-login-card { height: 100%; }
+
+// ========================================
+// Home Side-by-Side Banners
+// ========================================
+.front-home-banner { border-radius: $front-radius-lg; display: block; min-height: 100%; overflow: hidden; }
+.front-home-banner img { aspect-ratio: 2 / 1; display: block; height: 100%; object-fit: cover; width: 100%; }
+.front-home-banner .front-ad-placeholder { aspect-ratio: 10 / 7; }
+
+// ========================================
+// Home Login Card
+// ========================================
+.front-home-login-card { background: $front-surface; border: 1px solid $front-border; border-radius: $front-radius-lg; box-shadow: $front-shadow-sm; padding: 1rem 1.15rem; }
+.front-home-login-card h2 { color: $front-primary; font-size: 1.35rem; margin-bottom: .65rem; }
+.front-home-login-card__form { display: grid; gap: .65rem; }
+.front-home-login-card .form-label { font-size: .82rem; margin-bottom: .2rem; }
+.front-home-login-card .form-control { min-height: 40px; }
+.front-home-login-card__options { align-items: center; display: flex; font-size: .75rem; justify-content: space-between; }
+.front-home-login-card__options .form-check { align-items: center; display: flex; gap: .45rem; margin: 0; padding: 0; }
+.front-home-login-card__options .form-check-input { float: none; margin: 0; }
+.front-home-login-card__options a,
+.front-home-login-card__footer a { color: $front-primary; }
+.front-home-login-card__button { background: $front-accent; border: 0; border-radius: $front-radius-sm; color: $front-white; padding: .6rem 1rem; width: 100%; }
+.front-home-login-card__button:hover { background: $front-accent-hover; }
+.front-home-login-card__button:active { background: $front-accent-active; }
+.front-home-login-card__footer { color: $front-muted; font-size: .75rem; margin: .65rem 0 0; text-align: center; }
+
+// ========================================
+// Home Promotional Banner
+// ========================================
+.front-home-promo__container,
+.front-popular-topics__container { padding-inline: clamp(.65rem, 1.5vw, 1.5rem); }
+.front-home-promo__banner { background: $front-dark; border-radius: $front-radius-lg; color: $front-white; direction: ltr; display: grid; grid-template-columns: minmax(0, .9fr) minmax(360px, 1.1fr); min-height: 190px; overflow: hidden; }
+.front-home-promo__content { align-self: center; direction: rtl; padding: 1.35rem clamp(1.25rem, 3vw, 3rem); text-align: right; }
+.front-home-promo__content h2 { font-size: clamp(1.45rem, 2.2vw, 2.1rem); line-height: 1.8; margin-bottom: .25rem; }
+.front-home-promo__content p { color: $front-white-muted; line-height: 1.8; margin-bottom: .75rem; }
+.front-home-promo__button { background: $front-accent; border-radius: $front-radius-sm; color: $front-white; display: inline-block; padding: .6rem 1.1rem; }
+.front-home-promo__button:hover { background: $front-accent-hover; color: $front-white; }
+.front-home-promo__button:active { background: $front-accent-active; }
+.front-home-promo__visual { align-self: stretch; overflow: hidden; }
+.front-home-promo__visual img { height: 100%; object-fit: cover; object-position: center; width: 100%; }
+
+// ========================================
+// Home Popular Topics
+// ========================================
+.front-popular-topics { padding-top: .75rem; }
+.front-topic-card { align-items: center; background: $front-surface; border: 1px solid $front-primary; border-radius: $front-radius; color: $front-primary; display: flex; flex-direction: column; gap: .65rem; height: 100%; justify-content: center; min-height: 125px; padding: .9rem .5rem; text-align: center; }
+.front-topic-card i { color: $front-primary; font-size: 2rem; }
+.front-topic-card img { height: auto; max-height: 48px; max-width: 56px; object-fit: contain; width: auto; }
+.front-topic-card span { font-size: 1rem; font-weight: 700; }
+.front-topic-card small { color: $front-muted; font-family: var(--front-font-ui); font-size: .72rem; font-weight: 400; }
+.front-topic-card__fallback { align-items: center; background: rgba($front-primary, .08); border-radius: 50%; display: flex; height: 52px; justify-content: center; width: 52px; }
+.front-topic-card__fallback i { font-size: 1.35rem; }
+.front-topic-card:hover { border-color: $front-dark; color: $front-dark; }
+.front-popular-topics__action { display: flex; justify-content: center; margin-top: 1.25rem; }

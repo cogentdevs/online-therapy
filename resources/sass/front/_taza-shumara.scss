@@ -1,0 +1,104 @@
+@use 'colors' as *;
+@use 'variables' as *;
+
+.front-taza-shumara { padding-block: 1.5rem 3rem; }
+.front-taza-shumara__container { max-width: none; padding-inline: clamp(.65rem, 1.5vw, 1.5rem); width: 100%; }
+.front-taza-breadcrumb { align-items: center; color: $front-muted; display: flex; font-size: .82rem; gap: .65rem; margin-bottom: 1.25rem; }
+.front-taza-breadcrumb a { color: $front-primary; }
+.front-taza-layout { direction: rtl; }
+.front-taza-content,
+.front-taza-sidebar-card { background: $front-surface; }
+.front-taza-section-title,
+.front-taza-sidebar-card > h2 { color: $front-primary; font-size: 1.35rem; font-weight: 700; margin: 0 0 .85rem; }
+.front-taza-section-title { border-bottom: 2px solid $front-primary; padding-bottom: .55rem; }
+
+.front-taza-magazine,
+.front-taza-article-card,
+.front-taza-compact-card,
+.front-taza-sidebar-card { border: 1px solid $front-border; border-radius: $front-radius; box-shadow: $front-shadow-sm; overflow: hidden; }
+.front-taza-magazine { margin-bottom: 2rem; padding-top: 1rem; }
+.front-taza-magazine__date { color: $front-primary; display: block; font-size: clamp(1.25rem, 2vw, 1.65rem); font-weight: 700; padding: 0 1rem 1rem; text-align: center; }
+.front-taza-magazine__cover { align-items: center; background: $front-light; display: flex; justify-content: center; overflow: hidden; }
+.front-taza-magazine__cover img { max-height: 100%; max-width: 100%; object-fit: contain; width: auto; }
+.front-taza-magazine__content { padding: clamp(1rem, 2vw, 1.5rem); text-align: right; }
+.front-taza-magazine__content h2 { font-size: clamp(1.35rem, 2vw, 1.75rem); line-height: 1.8; margin: 0 0 .35rem; }
+.front-taza-magazine__content p,
+.front-taza-article-card__content p { color: $front-muted; display: -webkit-box; line-clamp: 3; line-height: 1.9; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
+.front-taza-meta { color: $front-muted; font-size: .75rem; }
+.front-taza-magazine__content .front-taza-meta { display: flex; flex-wrap: wrap; gap: .5rem 1rem; }
+.front-taza-badge { background: $front-accent-soft; border: 1px solid $front-accent-border; border-radius: 999px; color: $front-accent-active; display: inline-block; font-size: .7rem; padding: .25rem .65rem; }
+.front-taza-button { background: $front-accent; border-radius: $front-radius-sm; color: $front-white; display: inline-flex; gap: .45rem; justify-content: center; padding: .55rem 1rem; }
+.front-taza-button:hover { background: $front-accent-hover; color: $front-white; }
+.front-taza-button:active { background: $front-accent-active; }
+.front-taza-button--small { font-size: .75rem; padding: .4rem .75rem; }
+.front-taza-button--block { display: flex; margin-top: 1rem; width: 100%; }
+
+.front-taza-article-list { display: grid; gap: 1rem; }
+.front-taza-article-card { display: grid; grid-template-columns: minmax(160px, 38%) minmax(0, 62%); }
+.front-taza-article-card__image { min-height: 205px; overflow: hidden; }
+.front-taza-article-card__image img { height: 100%; object-fit: cover; transition: transform $front-transition; width: 100%; }
+.front-taza-article-card:hover .front-taza-article-card__image img { transform: scale(1.03); }
+.front-taza-article-card__content { align-self: center; padding: 1rem; }
+.front-taza-article-card__content h3 { font-size: 1.05rem; line-height: 1.85; margin: .35rem 0 .15rem; }
+.front-taza-article-card__content p { margin: .45rem 0 .65rem; }
+.front-taza-compact-section { margin-block: 2rem; }
+.front-taza-compact-section__heading { align-items: center; display: flex; justify-content: space-between; }
+.front-taza-compact-section__heading .front-taza-section-title { flex: 1; }
+.front-taza-compact-controls { display: flex; gap: .3rem; margin-bottom: .85rem; margin-inline-start: .75rem; }
+.front-taza-compact-controls span { align-items: center; background: $front-dark; border-radius: .2rem; color: $front-white; display: flex; height: 28px; justify-content: center; width: 28px; }
+.front-taza-compact-card { height: 100%; }
+.front-taza-compact-card__image { display: block; height: 145px; overflow: hidden; position: relative; }
+.front-taza-compact-card__image img { height: 100%; object-fit: cover; width: 100%; }
+.front-taza-compact-card--half .front-taza-compact-card__image { aspect-ratio: 16 / 9; height: auto; }
+.front-taza-related-magazine-card .front-weekly-card__cover { height: auto; max-height: none; object-fit: contain; width: 100%; }
+.front-taza-related-magazine-card > a { display: block; }
+.front-taza-related-magazine-card time { display: block; margin-bottom: .75rem; }
+.front-taza-compact-card__image .front-taza-badge { position: absolute; right: .55rem; top: .55rem; }
+.front-taza-compact-card__body { padding: .8rem; }
+.front-taza-compact-card__body h3 { display: -webkit-box; font-size: .9rem; line-clamp: 2; line-height: 1.8; margin: 0 0 .35rem; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+
+.front-taza-sidebars,
+.front-taza-ads { display: grid; gap: 1rem; }
+.front-taza-sidebar-card { padding: 1rem; }
+.front-taza-sidebar-card > h2 { border-bottom: 1px solid $front-border; padding-bottom: .6rem; }
+.front-taza-authors { display: grid; }
+.front-taza-author { align-items: center; border-bottom: 1px solid $front-border; display: flex; gap: .75rem; padding-block: .6rem; }
+.front-taza-author img { border-radius: 50%; height: 44px; object-fit: cover; width: 44px; }
+.front-taza-topic-list { list-style: none; margin: 0; padding: 0; }
+.front-taza-topic-list li { border-bottom: 1px solid $front-border; }
+.front-taza-topic-list a { display: block; padding-block: .45rem; }
+.front-taza-tags { display: flex; flex-wrap: wrap; gap: .5rem; }
+.front-taza-tags a { border: 1px solid $front-border; border-radius: 999px; color: $front-text; font-size: .75rem; padding: .3rem .7rem; }
+.front-taza-tags a:hover { border-color: $front-primary; color: $front-primary; }
+.front-taza-sidebar-magazine { text-align: center; }
+.front-taza-sidebar-magazine img { display: block; height: auto; margin: 0 auto; max-height: 330px; max-width: 100%; object-fit: contain; width: auto; }
+.front-taza-sidebar-magazine p { margin: .85rem 0 0; }
+.front-taza-ad-slots { display: grid; gap: 1rem; }
+.front-taza-ads .front-ad-placement { min-height: 250px; }
+.front-taza-ads .front-ad-placement--tall { min-height: 600px; }
+
+@media (max-width: 1199.98px) {
+    // .front-taza-magazine__cover {  }
+    // .front-taza-magazine__cover img { }
+}
+
+@media (max-width: 991.98px) {
+    .front-taza-sidebars { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .front-taza-ad-slots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .front-taza-ads .front-ad-placement--tall { min-height: 250px; }
+}
+
+@media (max-width: 767.98px) {
+    .front-taza-shumara { padding-block: 1rem 2rem; }
+    .front-taza-article-card { grid-template-columns: 1fr; }
+    // .front-taza-magazine__cover {  min-height: 0; }
+    .front-taza-magazine__cover img { object-fit: contain; }
+    .front-taza-article-card__image { height: 220px; min-height: 0; }
+    .front-taza-sidebars { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 575.98px) {
+    .front-taza-ad-slots { grid-template-columns: 1fr; }
+    .front-taza-ads .front-ad-placement,
+    .front-taza-ads .front-ad-placement--tall { min-height: 250px; }
+}

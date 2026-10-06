@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap');
+
+$font-urdu-primary: 'Noto Nastaliq Urdu', serif;
+$font-urdu-ui: 'Noto Sans Arabic', sans-serif;
+$font-english-primary: Georgia, serif;
+$font-english-ui: Arial, sans-serif;
+
+$font-heading: $font-urdu-primary;
+$font-body: $font-urdu-primary;
+$font-navigation: $font-urdu-ui;
+$font-button: $font-urdu-ui;
+$font-meta: $font-urdu-ui;
+
+$front-body-line-height: 2.15;
+$front-heading-line-height: 1.85;
+$front-ui-line-height: 1.55;
+$front-meta-size: .78rem;
+
+:root {
+    --front-font-primary: #{$font-urdu-primary};
+    --front-font-ui: #{$font-urdu-ui};
+}
+
+html[lang='en'] {
+    --front-font-primary: #{$font-english-primary};
+    --front-font-ui: #{$font-english-ui};
+}

@@ -1,0 +1,29 @@
+@use 'colors' as *;
+@use 'variables' as *;
+
+.front-ad-placeholder {
+    align-items: center;
+    background: $front-light;
+    border: 1px dashed $front-border;
+    border-radius: $front-radius-sm;
+    color: $front-primary;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    min-height: inherit;
+    text-align: center;
+    width: 100%;
+}
+
+.front-ad-placeholder__label,
+.front-ad-placeholder > span:first-child { font-size: 1rem; }
+.front-ad-placeholder__size,
+.front-ad-placeholder > small { color: $front-muted; font-family: var(--front-font-ui); font-size: .72rem; margin-top: .2rem; }
+
+.front-ad-content,
+.front-ad-content__link,
+.front-ad-content__image { display: block; width: 100%; }
+.front-ad-content { min-height: inherit; overflow: hidden; }
+.front-ad-content__image { object-fit: contain; }
+.front-ad-content--google { align-items: center; display: flex; justify-content: center; }

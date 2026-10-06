@@ -1,0 +1,38 @@
+@use 'colors' as *;
+@use 'variables' as *;
+
+.front-mazmoon-detail { padding-block: 1.5rem 3rem; }
+.front-mazmoon-detail__container { max-width: none; padding-inline: clamp(.65rem, 1.5vw, 1.5rem); width: 100%; }
+.front-mazmoon-detail__layout { direction: ltr; }
+.front-mazmoon-detail__layout > * { direction: rtl; }
+.front-mazmoon-detail__article { background: $front-surface; border: 1px solid $front-border; border-radius: $front-radius; box-shadow: $front-shadow-sm; overflow: hidden; padding: clamp(1rem, 2.5vw, 2rem); }
+.front-mazmoon-detail__category { background: $front-accent-soft; border: 1px solid $front-accent-border; border-radius: 999px; color: $front-accent-active; display: inline-flex; font-size: .8rem; margin-bottom: .75rem; padding: .3rem .85rem; }
+.front-mazmoon-detail__title { color: $front-text; font-size: clamp(1.8rem, 4vw, 2rem); line-height: 2; margin-bottom: .75rem; }
+.front-mazmoon-detail__header-row { align-items: center; display: flex; gap: .75rem 1.25rem; justify-content: space-between; margin-bottom: 1.25rem; }
+.front-mazmoon-detail__meta { align-items: center; color: $front-muted; display: flex; flex: 1 1 auto; flex-wrap: wrap; gap: .5rem 1.25rem; }
+.front-mazmoon-detail__actions { display: flex; flex: 0 0 auto; }
+.front-article-bookmark { align-items: center; background: $front-surface; border: 1px solid $front-primary; border-radius: $front-radius-sm; color: $front-primary; display: inline-flex; gap: .55rem; padding: .55rem .9rem; transition: background-color .2s ease, color .2s ease; }
+.front-article-bookmark:hover, .front-article-bookmark:focus-visible, .front-article-bookmark.is-bookmarked { background: $front-primary; color: $front-surface; }
+.front-article-bookmark:disabled { cursor: wait; opacity: .65; }
+.front-mazmoon-detail__hero { border-radius: $front-radius-sm; display: block; height: auto; margin-bottom: 1.5rem; max-height: 650px; object-fit: contain; width: 100%; }
+.front-mazmoon-detail__body { color: $front-text; font-size: 1.05rem; line-height: 2.25; overflow-wrap: anywhere; }
+.front-mazmoon-detail__body > :last-child { margin-bottom: 0; }
+.front-mazmoon-detail__body h2, .front-mazmoon-detail__body h3, .front-mazmoon-detail__body h4 { line-height: 1.7; margin-block: 1.5rem .75rem; }
+.front-mazmoon-detail__body img { height: auto; max-width: 100%; }
+.front-mazmoon-detail__body blockquote { border-right: 4px solid $front-primary; color: $front-muted; margin: 1.25rem 0; padding: .5rem 1rem; }
+.front-mazmoon-detail__body ul, .front-mazmoon-detail__body ol { padding-right: 1.5rem; }
+.front-mazmoon-detail .front-sabqa-tags > span { border: 1px solid $front-border; border-radius: 999px; color: $front-text; font-size: .75rem; padding: .3rem .7rem; }
+.front-mazmoon-related { display: grid; gap: .75rem; }
+.front-mazmoon-related__card { align-items: center; border-bottom: 1px solid $front-border; direction: ltr; display: grid; gap: .75rem; grid-template-columns: 82px minmax(0, 1fr); padding-bottom: .75rem; }
+.front-mazmoon-related__card:last-child { border-bottom: 0; padding-bottom: 0; }
+.front-mazmoon-related__card img { border-radius: $front-radius-sm; height: 68px; object-fit: cover; width: 82px; }
+.front-mazmoon-related__content { direction: rtl; min-width: 0; }
+.front-mazmoon-related__content h3 { display: -webkit-box; font-size: .9rem; line-height: 2.5; margin: 0 0 .2rem; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.front-mazmoon-related__content time { color: $front-muted; font-size: .72rem; }
+
+@media (max-width: 767.98px) {
+    .front-mazmoon-detail { padding-block: 1rem 2rem; }
+    .front-mazmoon-detail__article { padding: 1rem; }
+    .front-mazmoon-detail__header-row { align-items: stretch; flex-direction: column; }
+    .front-mazmoon-detail__actions { align-self: flex-start; }
+}

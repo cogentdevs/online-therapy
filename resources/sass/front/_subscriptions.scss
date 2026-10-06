@@ -1,0 +1,146 @@
+@use 'colors' as *;
+@use 'variables' as *;
+
+.subscription-page {
+    background: radial-gradient(circle at 3% 55%, rgba($front-primary, .07) 0 130px, transparent 131px), linear-gradient(135deg, $front-primary-soft, $front-surface 50%, $front-primary-soft);
+    min-height: 620px;
+    overflow: hidden;
+    padding-bottom: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.subscription-page__container { max-width: $front-content-width; }
+.subscription-page__heading { margin: 1rem auto 1.5rem; text-align: center; }
+.subscription-page__heading h1 { font-size: clamp(1.75rem, 3vw, 2.35rem); font-weight: 800; margin: 0; }
+.subscription-page__heading > span { background: $front-primary; display: block; height: 3px; margin: .65rem auto .8rem; width: 52px; }
+.subscription-page__heading p { color: $front-muted; margin: 0; }
+.subscription-main-tabs,
+.subscription-type-tabs { display: flex; flex-wrap: nowrap; margin-inline: auto; overflow-x: auto; scrollbar-width: thin; }
+.subscription-main-tabs { border: 1px solid $front-accent-border; border-radius: $front-radius-sm; max-width: 570px; }
+.subscription-main-tabs .nav-item,
+.subscription-type-tabs .nav-item { flex: 1 0 auto; }
+.subscription-main-tabs .nav-link,
+.subscription-type-tabs .nav-link { border: 0; color: $front-text; font-weight: 700; min-height: 48px; white-space: nowrap; width: 100%; }
+.subscription-main-tabs .nav-link { border-radius: 0; padding-inline: 2rem; }
+.subscription-main-tabs .nav-link.active,
+.subscription-type-tabs .nav-link.active { background: linear-gradient(135deg, $front-primary-hover, $front-primary); color: $front-white; }
+.subscription-main-tabs i { margin-left: .55rem; }
+.subscription-main-tabs small { font-family: sans-serif; }
+.subscription-type-tabs-wrap { margin: 1.35rem auto 0; max-width: 680px; overflow: hidden; }
+.subscription-type-tabs { border: 1px solid $front-border; border-radius: $front-radius-sm; }
+.subscription-type-tabs .nav-item { flex: 1 1 0; min-width: 0; }
+.subscription-type-tabs .nav-link { background: rgba($front-surface, .65); padding-inline: 1.5rem; white-space: normal; }
+.subscription-plan-groups,
+.subscription-membership-grid { margin-top: 1.5rem; }
+.subscription-card { background: $front-surface; border: 1px solid $front-border; border-radius: $front-radius; box-shadow: $front-shadow-sm; display: flex; flex-direction: column; height: 100%; min-height: 370px; padding: 2rem 1.35rem 1.2rem; text-align: center; }
+.subscription-card__icon { align-items: center; background: $front-primary-soft; border-radius: 50%; color: $front-primary; display: inline-flex; font-size: 1.75rem; height: 76px; justify-content: center; margin: 0 auto 1.2rem; width: 76px; }
+.subscription-card h2 { font-size: 1.45rem; font-weight: 800; margin-bottom: .75rem; }
+.subscription-card__price { color: $front-primary-hover; font: 800 clamp(1.65rem, 3vw, 2rem)/1.2 sans-serif; margin-top: .65rem; }
+.subscription-card__discount { align-items: center; display: flex; gap: .65rem; justify-content: center; margin-top: .35rem; min-height: 28px; }
+.subscription-card__discount del { color: $front-muted; font-family: sans-serif; font-size: .95rem; }
+.subscription-card__discount-badge { background: $front-primary-soft; border: 1px solid $front-accent-border; border-radius: 999px; color: $front-primary-hover; font-size: .82rem; font-weight: 800; padding: .2rem .6rem; }
+.subscription-card__duration { color: $front-muted; margin: .55rem 0 1.2rem; }
+.subscription-card__action { align-items: center; background: $front-surface; border: 1px solid $front-primary; border-radius: $front-radius-sm; color: $front-primary; display: flex; font: inherit; font-weight: 700; justify-content: center; margin-top: auto; min-height: 50px; opacity: 1; text-decoration: none; width: 100%; }
+.subscription-card__action i { margin-right: .65rem; }
+.subscription-card__action:disabled { cursor: default; }
+.subscription-card__action-hint { color: $front-muted; display: block; font-size: .8rem; line-height: 1.6; margin-top: .55rem; text-align: center; }
+.subscription-plan-card { min-height: 380px; padding: 2rem 1.35rem 1.2rem; }
+.subscription-plan-card h2 { margin: 0 0 .45rem; }
+.subscription-plan-card__description { color: $front-muted; margin: 0 0 1.15rem; min-height: 1.6rem; }
+.subscription-plan-card .subscription-card__icon { flex: 0 0 72px; height: 72px; margin: 0 auto 1rem; width: 72px; }
+.subscription-plan-card .subscription-card__price { margin-top: 0; }
+.subscription-plan-card .subscription-card__duration { margin: .45rem 0 1rem; }
+.subscription-plan-card__videos { margin: 0 0 1rem; text-align: left; }
+.subscription-plan-card__videos h3 { color: $front-primary-hover; font-size: 1rem; font-weight: 800; margin: 0 0 .55rem; text-align: center; }
+.subscription-plan-card__videos ul { list-style: none; margin: 0; padding: 0; }
+.subscription-plan-card__videos li { align-items: flex-start; color: $front-text; display: flex; gap: .55rem; line-height: 1.45; margin-top: .4rem; overflow-wrap: anywhere; }
+.subscription-plan-card__videos i { color: $front-primary; flex: 0 0 auto; font-size: .85rem; margin-top: .3rem; }
+.subscription-plan-card__divider { border-top: 1px solid $front-border; margin-top: auto; }
+.subscription-plan-card .subscription-card__action { margin-top: 1rem; }
+.subscription-membership-card { min-height: 505px; padding: 1.35rem 1.35rem 1.15rem; }
+.subscription-membership-card .subscription-membership-icon { flex: 0 0 62px; font-size: 1.45rem; height: 62px; margin: 0 auto .8rem; width: 62px; }
+.subscription-membership-card h2 { margin: 0 0 .35rem; }
+.subscription-membership-card__description { color: $front-muted; margin: 0 0 .55rem; min-height: 1.55rem; }
+.subscription-membership-card .subscription-card__price { margin-top: .25rem; margin-bottom: 1.5rem;}
+.subscription-membership-card .subscription-card__duration { margin: .4rem 0 .8rem; }
+.subscription-membership-card__divider { border-top: 1px solid $front-border; margin: .1rem 0 .7rem; }
+.subscription-membership-card h3 { color: $front-primary; font-size: 1.05rem; font-weight: 800; margin-bottom: .45rem; }
+.subscription-membership-card__features { list-style: none; margin: 0 0 1rem; padding: 0; }
+.subscription-membership-module-row { align-items: center; background: $front-primary-soft; border-radius: $front-radius-sm; display: grid; gap: .65rem; grid-template-columns: 24px 1fr 24px; margin-top: .4rem; min-height: 44px; padding: .45rem .75rem; text-align: right; width: 100%; }
+.subscription-membership-module-row.is-included { color: $front-primary-hover; }
+.subscription-membership-module-row.is-excluded { color: $front-muted; opacity: .72; }
+.subscription-membership-module-row__icon,
+.subscription-membership-module-row__status { font-size: 1.1rem; text-align: center; }
+.subscription-membership-module-row__label { font-weight: 700; }
+.subscription-membership-card .subscription-card__action { margin-top: auto; }
+.subscription-empty { background: $front-surface; border: 1px solid $front-border; border-radius: $front-radius; color: $front-muted; margin-top: 1.5rem; padding: 3rem 1rem; text-align: center; }
+.subscription-empty i { color: $front-primary; font-size: 2rem; margin-bottom: .75rem; }
+.subscription-empty p { margin: 0; }
+.subscription-login-modal .modal-content { border: 1px solid $front-border; border-radius: $front-radius; box-shadow: $front-shadow; overflow: hidden; }
+.subscription-login-modal .modal-header { align-items: flex-start; background: $front-primary-soft; border-bottom-color: $front-border; padding: 1.15rem 1.35rem; }
+.subscription-login-modal .modal-header h2 { color: $front-text; font-size: 1.45rem; font-weight: 800; }
+.subscription-login-modal .modal-header p { color: $front-muted; margin: .25rem 0 0; }
+.subscription-login-modal .btn-close { margin: 0 auto 0 0; }
+.subscription-login-modal .modal-body { padding: 1.35rem; }
+.subscription-login-form__field-error { color: #b42318; font-size: .85rem; min-height: 1.25rem; padding-top: .2rem; }
+.subscription-checkout-page { background: linear-gradient(135deg, $front-primary-soft, $front-surface 52%, $front-primary-soft); min-height: 650px; padding-bottom: clamp(2.5rem, 5vw, 4.5rem); }
+.subscription-checkout-page__container { max-width: $front-content-width; }
+.subscription-checkout-page__heading { margin: 1rem auto 1.75rem; text-align: center; }
+.subscription-checkout-page__heading h1 { font-size: clamp(1.75rem, 3vw, 2.35rem); font-weight: 800; margin: 0; }
+.subscription-checkout-page__heading > span { background: $front-primary; display: block; height: 3px; margin: .65rem auto .8rem; width: 52px; }
+.subscription-checkout-page__heading p { color: $front-muted; margin: 0; }
+.subscription-checkout-page__content { margin-inline: auto; max-width: 1120px; }
+.subscription-checkout-page__alert { margin: 0 auto 1rem; max-width: 1120px; }
+.subscription-checkout-product,
+.subscription-checkout-summary { background: $front-surface; border: 1px solid $front-border; border-radius: $front-radius; box-shadow: $front-shadow-sm; padding: clamp(1.25rem, 3vw, 2rem); }
+.subscription-checkout-product { display: flex; flex-direction: column; text-align: center; }
+.subscription-checkout-product__kind { align-self: center; background: $front-primary-soft; border-radius: 999px; color: $front-primary-hover; font-weight: 800; padding: .3rem .9rem; }
+.subscription-checkout-product__icon { align-items: center; background: $front-primary-soft; border-radius: 50%; color: $front-primary; display: flex; font-size: 1.65rem; height: 70px; justify-content: center; margin: 1rem auto; width: 70px; }
+.subscription-checkout-product h2 { font-size: 1.5rem; font-weight: 800; margin: 0; }
+.subscription-checkout-product__discount { align-items: center; display: flex; gap: .6rem; justify-content: center; margin-top: .8rem; }
+.subscription-checkout-product__discount del { color: $front-muted; font-family: sans-serif; }
+.subscription-checkout-product__discount span { background: $front-primary-soft; border-radius: 999px; color: $front-primary-hover; font-size: .85rem; font-weight: 800; padding: .2rem .6rem; }
+.subscription-checkout-product__price { color: $front-primary-hover; font: 800 clamp(1.75rem, 4vw, 2.2rem)/1.2 sans-serif; margin: 1rem 0 .35rem; }
+.subscription-checkout-product__duration { color: $front-muted; margin-bottom: 1.25rem; }
+.subscription-checkout-product__modules { border-top: 1px solid $front-border; margin-top: auto; padding-top: 1rem; }
+.subscription-checkout-product__modules h3 { color: $front-primary-hover; font-size: 1.1rem; font-weight: 800; margin-bottom: .75rem; }
+.subscription-checkout-product__module { align-items: center; background: $front-primary-soft; border-radius: $front-radius-sm; color: $front-primary-hover; display: grid; gap: .6rem; grid-template-columns: 24px 1fr 24px; margin-top: .45rem; min-height: 44px; padding: .5rem .75rem; text-align: right; }
+.subscription-checkout-product__module span { font-weight: 700; }
+.subscription-checkout-product__module i { text-align: center; }
+.subscription-checkout-product__empty { color: $front-muted; margin: 0; }
+.subscription-checkout-summary > h2 { font-size: 1.45rem; font-weight: 800; margin-bottom: 1rem; }
+.subscription-checkout-summary__details { margin: 0; }
+.subscription-checkout-summary__details > div { align-items: center; border-bottom: 1px solid $front-border; display: flex; gap: 1rem; justify-content: space-between; padding: .7rem 0; }
+.subscription-checkout-summary__details dt { color: $front-muted; font-weight: 600; }
+.subscription-checkout-summary__details dd { font-weight: 700; margin: 0; text-align: left; }
+.subscription-checkout-summary__details .subscription-checkout-summary__total { border-bottom: 0; color: $front-primary-hover; font-size: 1.2rem; padding-top: 1rem; }
+.subscription-checkout-summary__total dt { color: inherit; font-weight: 800; }
+.subscription-coupon { border-top: 1px solid $front-border; margin-top: .75rem; padding-top: 1rem; }
+.subscription-coupon h3,
+.subscription-payment-methods legend { font-size: 1.05rem; font-weight: 800; margin-bottom: .7rem; }
+.subscription-coupon .form-control { border-color: $front-border; min-height: 46px; }
+.subscription-coupon .btn { min-width: 92px; }
+.subscription-payment-methods { border: 0; margin: 1.25rem 0 0; padding: 0; }
+.subscription-payment-option { align-items: start; border: 1px solid $front-border; border-radius: $front-radius-sm; cursor: pointer; display: grid; gap: .75rem; grid-template-columns: 22px 28px 1fr; margin-top: .55rem; min-height: 54px; padding: .75rem .85rem; transition: border-color $front-transition, background $front-transition, box-shadow $front-transition; }
+.subscription-payment-option:hover,
+.subscription-payment-option.is-selected { background: $front-primary-soft; border-color: $front-primary; box-shadow: 0 0 0 2px rgba($front-primary, .08); }
+.subscription-payment-option input { height: 1px; opacity: 0; position: absolute; width: 1px; }
+.subscription-payment-option__mark { border: 2px solid $front-accent-border; border-radius: 50%; height: 20px; position: relative; width: 20px; }
+.subscription-payment-option.is-selected .subscription-payment-option__mark { border-color: $front-primary; }
+.subscription-payment-option.is-selected .subscription-payment-option__mark::after { background: $front-primary; border-radius: 50%; content: ''; inset: 4px; position: absolute; }
+.subscription-payment-option > i { color: $front-primary; font-size: 1.2rem; text-align: center; }
+.subscription-payment-option__details { display: grid; gap: .15rem; text-align: right; }
+.subscription-payment-option__details strong { font-weight: 800; }
+.subscription-payment-option__details small { color: $front-muted; font-family: sans-serif; overflow-wrap: anywhere; }
+.subscription-payment-proof { border-top: 1px solid $front-border; display: grid; gap: 1rem; margin-top: 1.25rem; padding-top: 1.25rem; }
+.subscription-payment-proof .form-control { border-color: $front-border; min-height: 46px; }
+.subscription-checkout-summary__action { align-items: center; background: $front-primary; border: 1px solid $front-primary; border-radius: $front-radius-sm; color: $front-white; display: flex; font: inherit; font-weight: 800; gap: .75rem; justify-content: center; margin-top: 1.25rem; min-height: 50px; width: 100%; }
+.subscription-checkout-summary__action:disabled { cursor: not-allowed; opacity: .48; }
+.subscription-checkout-summary__error { color: #b42318; font-size: .9rem; margin: .65rem 0 0; }
+
+@media (max-width: 575.98px) {
+    .subscription-main-tabs .nav-link { padding-inline: 1rem; }
+    .subscription-card { min-height: 340px; padding-inline: 1rem; }
+    .subscription-checkout-page__heading p { padding-inline: .5rem; }
+    .subscription-checkout-product,
+    .subscription-checkout-summary { padding: 1.15rem; }
+}

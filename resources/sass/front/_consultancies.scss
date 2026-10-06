@@ -1,0 +1,39 @@
+@use 'colors' as *;
+@use 'variables' as *;
+
+.consultancies-page,
+.consultancy-detail { padding-block: clamp(2.5rem, 5vw, 5rem); }
+.consultancies-page__container,
+.consultancy-detail__container { max-width: $front-content-width; }
+.consultancies-page__heading { margin: 1.5rem 0 2rem; }
+.consultancies-page__heading h1,
+.consultancy-detail__content h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin: 0; }
+.consultancies-page__heading p,
+.consultancy-detail__summary { color: $front-muted; margin: .6rem 0 0; }
+.consultancies-page__empty { background: $front-light; border: 1px solid $front-border; border-radius: $front-radius; color: $front-muted; padding: 2rem; text-align: center; }
+.consultancy-card { background: $front-surface; border: 1px solid $front-border; border-radius: $front-radius; box-shadow: $front-shadow-sm; display: flex; flex-direction: column; height: 100%; overflow: hidden; transition: transform $front-transition, box-shadow $front-transition; }
+.consultancy-card:hover { box-shadow: $front-shadow; transform: translateY(-4px); }
+.consultancy-card__image { background: $front-light; display: block; height: 220px; }
+.consultancy-card__image img { height: 100%; object-fit: cover; width: 100%; }
+.consultancy-card__image-placeholder { align-items: center; color: $front-primary; display: flex; font-size: 2.2rem; height: 100%; justify-content: center; }
+.consultancy-card__body { display: flex; flex: 1; flex-direction: column; padding: 1.25rem; }
+.consultancy-card h2 { font-size: 1.3rem; font-weight: 800; margin: 0 0 .6rem; }
+.consultancy-card p { color: $front-muted; display: -webkit-box; margin: 0 0 1rem; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
+.consultancy-card__details,
+.consultancy-detail__details { display: grid; gap: .45rem; margin: 0 0 1.25rem; }
+.consultancy-card__details div,
+.consultancy-detail__details div { align-items: baseline; display: flex; gap: .45rem; }
+.consultancy-card dt,
+.consultancy-detail dt { color: $front-muted; font-weight: 700; }
+.consultancy-card dd,
+.consultancy-detail dd { font-weight: 800; margin: 0; }
+.consultancy-card__button { align-self: flex-start; margin-top: auto; }
+.consultancy-detail__article { background: $front-surface; border: 1px solid $front-border; border-radius: $front-radius-lg; box-shadow: $front-shadow-sm; display: grid; grid-template-columns: minmax(280px, .8fr) minmax(0, 1.2fr); overflow: hidden; }
+.consultancy-detail__image { height: 100%; max-height: 560px; object-fit: cover; width: 100%; }
+.consultancy-detail__content { padding: clamp(1.5rem, 4vw, 3rem); }
+.consultancy-detail__details { margin-top: 1.25rem; }
+.consultancy-detail__body { border-top: 1px solid $front-border; margin-top: 1.25rem; padding-top: 1.25rem; }
+.consultancy-detail__body > :last-child { margin-bottom: 0; }
+.consultancy-detail__cta { cursor: default; display: inline-flex; margin-top: 1.5rem; pointer-events: none; }
+.consultancy-related { margin-top: clamp(3rem, 6vw, 5rem); }
+@media (max-width: 767.98px) { .consultancy-detail__article { grid-template-columns: 1fr; } .consultancy-detail__image { max-height: 350px; } }

@@ -1,0 +1,37 @@
+@extends('layouts.adminLayout.admin-design')
+
+@section('title', 'Add Video')
+
+@section('content')
+    <div class="container-fluid">
+        <div class="mb-4">
+            <h2 class="mb-1">Add Video</h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('admin.video.index') }}">Videos</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Add Video</li>
+                </ol>
+            </nav>
+        </div>
+
+        @if ($errors->any())
+            <div class="alert alert-danger" role="alert"><strong>Please correct the highlighted fields.</strong></div>
+        @endif
+
+        <form method="POST" action="{{ route('admin.video.store') }}" enctype="multipart/form-data">
+            @csrf
+            <section class="card admin-settings-card">
+                <div class="card-header">
+                    <h3>Video Information</h3>
+                    <p>Add the Video details, thumbnail, access, visibility, and sharing settings.</p>
+                </div>
+                <div class="card-body">@include('admin.video._form-fields', ['video' => null])</div>
+            </section>
+            <div class="d-flex justify-content-end gap-2">
+                <a class="btn btn-outline-secondary" href="{{ route('admin.video.index') }}">Cancel</a>
+                <button class="btn btn-primary admin-primary-button" type="submit"><i class="fa-solid fa-plus me-2" aria-hidden="true"></i>Add Video</button>
+            </div>
+        </form>
+    </div>
+@endsection

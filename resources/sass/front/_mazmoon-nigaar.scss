@@ -1,0 +1,45 @@
+@use 'colors' as *;
+@use 'variables' as *;
+
+.front-authors-page { padding-block: 1.25rem 2.5rem; }
+.front-authors-page__container { max-width: none; padding-inline: clamp(.75rem, 4vw, 5rem); width: 100%; }
+.front-authors-page__heading { margin: .25rem 0 1rem; text-align: center; }
+.front-authors-page__heading h1 { font-size: clamp(1.9rem, 3vw, 2.65rem); font-weight: 700; line-height: 1.5; margin: 0; }
+.front-authors-page__heading span { background: $front-primary; display: block; height: 2px; margin: 1rem auto 0; width: 50px; }
+.front-authors-search { margin: 2rem auto 2rem; max-width: 560px; }
+.front-authors-search .form-control { border-color: $front-border; border-radius: 0 $front-radius $front-radius 0; min-height: 44px; }
+.front-authors-search .form-control:focus { border-color: $front-primary; box-shadow: 0 0 0 .2rem rgba($front-primary, .12); }
+.front-authors-search button { background: $front-accent; border: 1px solid $front-accent; border-radius: $front-radius 0 0 $front-radius; color: $front-white; min-width: 52px; transition: background-color $front-transition, border-color $front-transition; }
+.front-authors-search button:hover { background: $front-accent-hover; border-color: $front-accent-hover; }
+.front-authors-grid { align-items: stretch; }
+.front-author-card { align-items: stretch; background: $front-surface; border: 1px solid $front-border; border-radius: $front-radius; box-shadow: $front-shadow-sm; display: flex; flex-direction: row-reverse; gap: .85rem; height: 100%; min-height: 205px; overflow: hidden; padding: .7rem; position: relative; text-align: right; transition: box-shadow $front-transition, transform $front-transition; }
+.front-author-card::before { background: rgba($front-primary, .08); border-radius: 50%; content: ''; height: 190px; inset: -22px auto auto -38px; position: absolute; width: 190px; }
+.front-author-card::after { background: rgba($front-accent, .07); border-radius: 50%; content: ''; height: 76px; inset: -20px auto auto 42%; position: absolute; width: 76px; }
+.front-author-card:hover { box-shadow: $front-shadow; transform: translateY(-3px); }
+.front-author-card__media { align-self: center; background: $front-primary-soft;  border-radius: 10%; box-shadow: 0 0 0 2px rgba($front-primary, .07), 0 .35rem 1rem rgba($front-primary, .14); flex: 0 0 112px; height: 112px; overflow: hidden; position: relative; width: 112px; z-index: 1; }
+.front-author-card__media a { display: block; height: 100%; width: 100%; }
+.front-author-card__image { border-radius: 10%; display: block; height: 100%; object-fit: cover; object-position: center; width: 100%; }
+.front-author-card__content { display: flex; flex: 1 1 auto; flex-direction: column; min-width: 0; padding: .55rem .2rem .1rem; position: relative; z-index: 1; text-align: left;}
+.front-author-card__name { color: $front-text; font-size: 1.2rem; font-weight: 700; line-height: 1.65; margin: 0 0 .4rem; }
+.front-author-card__name a:hover { color: $front-accent-hover; }
+.front-author-card__name::after { background: $front-primary; content: ''; display: block; height: 2px; margin: .5rem auto 0 0; width: 50px; }
+.front-author-card__meta { color: $front-primary-hover; font-size: .9rem; line-height: 1.7; margin: 0 0 .2rem; font-weight: 600;}
+.front-author-card__detail { color: $front-muted; display: -webkit-box; font-size: .8rem; line-height: 1.85; margin: .3rem 0; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.front-author-card__contact { align-items: center; color: $front-muted; display: flex; font-size: .73rem; gap: .35rem; margin: .15rem 0 0; overflow-wrap: anywhere; }
+.front-author-card__contact i { color: $front-primary; }
+.front-author-card__action { align-items: center; color: $front-accent; display: flex; font-size: .78rem; font-weight: 700; gap: .55rem; justify-content: flex-start; margin-top: auto; padding-top: .55rem; }
+.front-author-card__action i { align-items: center; background: $front-accent-soft; border: 1px solid $front-accent-border; border-radius: 50%; display: flex; height: 30px; justify-content: center; transition: background-color $front-transition, color $front-transition; width: 30px; }
+.front-author-card:hover .front-author-card__action i { background: $front-accent; color: $front-white; }
+.front-authors-pagination { direction: ltr; margin-top: 1.5rem; }
+.front-authors-pagination .pagination { justify-content: center; margin-bottom: 0; }
+.front-authors-pagination .page-item.active .page-link { background-color: $front-accent; border-color: $front-accent; color: $front-white; }
+.front-authors-pagination .page-item.active .page-link:hover,
+.front-authors-pagination .page-item.active .page-link:focus { background-color: $front-accent-hover; border-color: $front-accent-hover; }
+.front-authors-empty { background: $front-surface; border: 1px solid $front-border; border-radius: $front-radius; padding: 2rem; text-align: center; }
+
+@media (max-width: 575.98px) {
+    .front-authors-page { padding-block: 1rem 2rem; }
+    .front-authors-page__container { padding-inline: .75rem; }
+    .front-author-card { min-height: 205px; }
+    .front-author-card__media { flex-basis: 96px; height: 96px; width: 96px; }
+}

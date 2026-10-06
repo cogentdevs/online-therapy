@@ -1,0 +1,197 @@
+@use 'colors' as *;
+
+// ========================================
+// Front Header - Tablet Adjustments
+// ========================================
+@media (min-width: 768px) {
+    .front-most-viewed-card__media--magazine { padding: 0 1rem; }
+    .front-most-viewed-card__media--magazine img { display: block; object-fit: contain; }
+}
+
+@media (max-width: 1280px) {
+    .front-logo__image {
+        max-width: 250px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+    .front-home-section-spacing { padding-top: 20px; padding-bottom: 40px; }
+
+    .front-logo__image {
+        max-width: 190px;
+    }
+
+    .front-brand-row__inner {
+        gap: .75rem;
+        grid-template-columns: minmax(190px, .8fr) minmax(300px, 1.5fr) minmax(190px, .8fr);
+    }
+
+    .front-logo__text strong { font-size: 1.05rem; }
+    .front-logo__text small { font-size: .6rem; }
+    .front-logo__mark { height: 48px; width: 48px; }
+    .front-subscribe { font-size: .78rem; padding: .55rem .7rem; }
+}
+
+// ========================================
+// Front Header - Collapsed Navigation
+// ========================================
+@media (max-width: 991.98px) {
+    .front-main-nav .navbar { padding-block: .35rem; }
+    .front-nav-shell { direction: ltr; flex-wrap: wrap; }
+    .front-main-nav .navbar-toggler { margin: 0 !important; }
+    .front-main-nav .navbar-collapse { padding-block: .6rem; }
+    .front-main-nav .navbar-nav { gap: .1rem; }
+    .front-main-nav .nav-item { width: 100%; }
+    .front-main-nav .nav-link { flex: 1 1 auto; text-align: left; }
+    .front-main-nav .dropdown-menu { border: 0; box-shadow: none; margin: 0; padding-inline: 1rem; position: static !important; transform: none !important; }
+    .front-nav-parent { justify-content: space-between; width: 100%; }
+    .front-nav-parent-link::after { display: none; }
+
+    .front-hero-carousel,
+    .front-hero-carousel .carousel-inner,
+    .front-hero-carousel .carousel-item { height: 480px; }
+
+    .front-latest { height: auto; margin-top: 0; }
+    .front-latest-item { min-height: 0; }
+}
+
+// ========================================
+// Front Header - Mobile Adjustments
+// ========================================
+@media (max-width: 767.98px) {
+    .front-home-section-spacing { padding-top: 20px; padding-bottom: 30px; }
+
+    .front-topbar { display: none; }
+
+    .front-logo__image {
+        max-width: 190px;
+    }
+
+    .front-brand-row__inner {
+        align-items: center;
+        direction: ltr;
+        display: flex;
+        flex-wrap: wrap;
+        gap: .65rem;
+        justify-content: space-between;
+        min-height: 0;
+        padding-block: .65rem;
+    }
+
+    .front-logo { flex: 0 1 auto; gap: .4rem; max-width: calc(100% - 165px); order: 1; overflow: hidden; }
+    .front-header-actions { flex: 0 0 auto; order: 2; }
+    .front-header-ad--desktop { display: none; }
+
+    .front-header-ad--mobile {
+        display: block;
+        flex: 1 0 100%;
+        margin-top: .15rem;
+        max-width: 100%;
+        order: 3;
+    }
+
+    .front-logo__mark { height: 46px; width: 46px; }
+    .front-logo__text { min-width: 0; }
+    .front-logo__text strong { font-size: .9rem; line-height: 1.45; white-space: normal; }
+    .front-logo__text small { display: none; }
+    .front-subscribe { font-size: .75rem; padding: .55rem .7rem; }
+    .front-profile-button { height: 38px; width: 38px; }
+}
+
+@media (max-width: 420px) {
+    .front-header-shell { padding-inline: .35rem; }
+    .front-brand-row__inner { gap: .35rem; }
+    .front-logo { gap: .4rem; }
+    .front-logo__mark { height: 40px; width: 40px; }
+    .front-logo__text strong { font-size: .84rem; }
+    .front-logo__text small { display: none; }
+    .front-header-actions { gap: .35rem; }
+    .front-subscribe { font-size: .68rem; padding: .48rem .55rem; }
+    .front-profile-button { height: 36px; width: 36px; }
+    .front-logo__image {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 360px) {
+    .front-logo__image {
+        max-width: 160px;
+    }
+}
+
+
+
+// ========================================
+// Existing Homepage Responsive Rules
+// ========================================
+@media (max-width: 575.98px) {
+    .front-hero { padding-top: 1rem; }
+    .front-hero-carousel, .front-hero-carousel .carousel-inner, .front-hero-carousel .carousel-item { height: 410px; }
+    .front-slider-content { inset-inline: 3.25rem; max-width: none; margin-right: 0px; }
+    .front-slider-content--top { top: 8%; }
+    .front-slider-content--center { top: 50%; }
+    .front-slider-content--bottom { bottom: 12%; }
+    .front-slider-content .front-tag { margin-bottom: .45rem; }
+    .front-slider-content h2 { font-size: 1.35rem; line-height: 1.7; margin-bottom: .35rem; }
+    .front-slider-content p { font-size: .8rem; line-height: 1.75; margin-bottom: .65rem; }
+    .front-slider-content__button { font-size: .75rem; padding: .5rem .8rem; }
+    .front-hero-carousel .carousel-control-next-icon,
+    .front-hero-carousel .carousel-control-prev-icon { height: 34px; width: 34px; }
+    .front-latest { padding: .85rem 1rem; }
+    .front-latest-item { grid-template-columns: 102px minmax(0, 1fr); }
+    .front-latest-item img { height: 86px; width: 102px; }
+    .front-editorial-main__image { height: 270px; }
+    .front-weekly-card__cover { height: auto; max-height: 430px; }
+    .front-newsletter__content { max-width: 100%; }
+    .front-newsletter__visual { opacity: .25; }
+    .front-logo__image {
+        max-width: 200px;
+    }
+}
+
+// ========================================
+// Front Footer - Responsive Adjustments
+// ========================================
+@media (max-width: 767.98px) {
+    .front-most-viewed__header { align-items: stretch; border-bottom: 0; flex-direction: column; gap: .75rem; }
+    .front-most-viewed__header h2 { background: transparent; color: #3f6ca1; justify-content: center; padding: 0; text-align: center; }
+    .front-most-viewed__tabs { align-self: center; justify-content: center; width: min(100%, 360px); }
+    .front-most-viewed__tabs .nav-link { border-bottom: 1px solid #d5dfeb; border-radius: .45rem; flex: 1; }
+    .front-most-viewed__carousel { padding-inline: 1.8rem; }
+    .front-most-viewed__track { display: flex; gap: .8rem; overflow-x: auto; scroll-behavior: smooth; scroll-snap-type: x mandatory; scrollbar-width: none; }
+    .front-most-viewed__track::-webkit-scrollbar { display: none; }
+    .front-most-viewed-card { flex: 0 0 100%; scroll-snap-align: start; }
+    .front-most-viewed__control { align-items: center; background: rgba(63, 108, 161, .88); border: 0; border-radius: 50%; color: #fff; display: flex; height: 34px; justify-content: center; position: absolute; top: 42%; transform: translateY(-50%); width: 34px; z-index: 2; }
+    .front-most-viewed__control--previous { inset-inline-start: 0; }
+    .front-most-viewed__control--next { inset-inline-end: 0; }
+}
+
+@media (max-width: 1199.98px) {
+    .front-footer__column { border-inline-start: 0; }
+}
+
+@media (max-width: 767.98px) {
+    .front-footer { padding-top: 2.25rem; }
+    .front-footer__column { text-align: center; }
+    .front-footer__brand .front-logo,
+    .front-socials,
+    .front-footer__app-badges { justify-content: center; }
+    .front-footer__about { margin-inline: auto; }
+    .front-footer__contact { justify-items: center; }
+    .front-footer__contact a,
+    .front-footer__contact p { justify-content: center; }
+    .front-footer__bottom { align-items: center; text-align: center; }
+}
+
+@media (max-width: 767.98px) {
+    .front-home-promo__banner { grid-template-columns: 1fr; }
+    .front-home-promo__content { order: 1; text-align: center; }
+    .front-home-promo__visual { height: 170px; order: 2; }
+    .front-topic-card { min-height: 110px; }
+    .front-home-banners-login__banners > div,
+    .front-home-banner { height: auto; }
+    .front-footer__brand .front-logo__image--footer {
+        max-height: 100px;
+        max-width: 160px !important;
+    }
+}

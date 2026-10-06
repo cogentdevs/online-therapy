@@ -1,0 +1,263 @@
+@use 'colors' as *;
+@use 'variables' as *;
+@use 'fonts' as *;
+
+// ========================================
+// Front Header - Shared Full-Width Shell
+// ========================================
+.front-header-shell {
+    margin-inline: auto;
+    padding-inline: .6rem;
+    width: 100%;
+}
+
+// ========================================
+// Front Header - Top Utility Bar
+// ========================================
+.front-topbar {
+    background: $front-dark;
+    color: $front-white;
+    font-family: var(--front-font-ui);
+    font-size: .75rem;
+}
+
+.front-topbar__inner {
+    align-items: center;
+    direction: ltr;
+    display: flex;
+    justify-content: space-between;
+    min-height: 35px;
+}
+
+.front-topbar__socials,
+.front-topbar__contact {
+    align-items: center;
+    display: flex;
+}
+
+.front-topbar__socials { gap: .4rem; }
+.front-topbar__contact { direction: ltr; gap: 1rem; }
+
+.front-topbar__socials a {
+    align-items: center;
+    border: 1px solid $front-white-border;
+    border-radius: 50%;
+    color: $front-white;
+    display: inline-flex;
+    height: 23px;
+    justify-content: center;
+    width: 23px;
+}
+
+.front-topbar__contact a {
+    align-items: center;
+    color: $front-white-strong-muted;
+    direction: ltr;
+    display: inline-flex;
+    gap: .35rem;
+}
+
+.front-topbar a:hover { color: $front-white; }
+
+// ========================================
+// Front Header - Main Brand / Ad / Actions Row
+// ========================================
+.front-brand-row {
+    background: $front-surface;
+    border-bottom: 1px solid $front-border;
+}
+
+.front-brand-row__inner {
+    align-items: center;
+    direction: ltr;
+    display: grid;
+    gap: clamp(.75rem, 2vw, 2rem);
+    grid-template-areas: 'logo advertisement actions';
+    grid-template-columns: minmax(220px, 1fr) minmax(360px, 728px) minmax(230px, 1fr);
+    min-height: 112px;
+}
+
+.front-logo {
+    align-items: center;
+    direction: ltr;
+    display: inline-flex;
+    gap: .7rem;
+    grid-area: logo;
+    justify-self: start;
+}
+
+.front-logo__mark {
+    align-items: center;
+    background: $front-primary;
+    border-radius: 50%;
+    color: $front-white;
+    display: inline-flex;
+    flex: 0 0 auto;
+    font-family: var(--front-font-ui);
+    font-size: 1.05rem;
+    font-weight: 700;
+    height: 54px;
+    justify-content: center;
+    width: 54px;
+}
+
+.front-logo__image {
+    display: block;
+    flex: 0 1 auto;
+    height: auto;
+    max-height: 100px;
+    max-width: 270px;
+    object-fit: contain;
+}
+
+.front-logo__text { direction: ltr; text-align: left; }
+.front-logo__text strong { display: block; font-size: 1.25rem; line-height: 1.75; white-space: nowrap; }
+.front-logo__text small { color: $front-muted; display: block; font-family: var(--front-font-ui); font-size: .68rem; line-height: 1.35; white-space: nowrap; }
+
+.front-header-ad {
+    aspect-ratio: 728 / 90;
+    grid-area: advertisement;
+    justify-self: center;
+    max-width: 728px;
+    width: 100%;
+}
+
+.front-header-ad--mobile { display: none; }
+
+.front-header-actions {
+    align-items: center;
+    direction: ltr;
+    display: flex;
+    gap: .65rem;
+    grid-area: actions;
+    justify-self: end;
+}
+
+.front-subscribe {
+    background: $front-accent;
+    border: 1px solid $front-accent;
+    border-radius: $front-radius-sm;
+    color: $front-white;
+    font-family: var(--front-font-ui);
+    font-weight: 700;
+    padding: .65rem 1.05rem;
+    white-space: nowrap;
+}
+
+.front-subscribe:hover { background: $front-accent-hover; border-color: $front-accent-hover; color: $front-white; }
+.front-subscribe:active { background: $front-accent-active; border-color: $front-accent-active; }
+
+.front-profile-button {
+    align-items: center;
+    background: $front-surface;
+    border: 1px solid $front-border;
+    border-radius: 50%;
+    color: $front-dark;
+    display: inline-flex;
+    font-size: 1rem;
+    height: 42px;
+    justify-content: center;
+    width: 42px;
+}
+
+.front-profile-button:hover,
+.front-profile-button[aria-expanded='true'] {
+    border-color: $front-primary;
+    color: $front-primary;
+}
+
+.front-profile-menu {
+    border: 1px solid $front-border;
+    border-radius: $front-radius-sm;
+    box-shadow: $front-shadow;
+    inset-inline: auto !important;
+    left: auto !important;
+    margin-top: .4rem !important;
+    max-width: calc(100vw - 1rem);
+    min-width: 145px;
+    right: 0 !important;
+    transform: none !important;
+}
+
+.front-profile-menu .dropdown-item { font-family: var(--front-font-ui); padding-block: .5rem; }
+
+// ========================================
+// Front Header - Main Navigation
+// ========================================
+.front-main-nav {
+    background: $front-surface;
+    border-bottom: 3px solid $front-primary;
+    box-shadow: $front-shadow-sm;
+}
+
+.front-main-nav .navbar { padding-block: .3rem; }
+.front-nav-shell { align-items: center; display: flex; }
+.front-main-nav .navbar-collapse { width: 100%; }
+.front-main-nav .navbar-nav { direction: ltr; gap: .15rem; }
+
+.front-main-nav .nav-link {
+    border-radius: $front-radius-sm;
+    color: $front-text;
+    font-family: var(--front-font-ui);
+    font-weight: 600;
+    line-height: 1.6;
+    padding: .58rem 1rem !important;
+}
+
+.front-main-nav .nav-link:hover { color: $front-primary; }
+
+.front-main-nav .nav-link.active {
+    background: $front-accent;
+    color: $front-white;
+}
+
+.front-main-nav .nav-link.active:hover { background: $front-accent-hover; color: $front-white; }
+.front-main-nav .nav-link.active:active { background: $front-accent-active; }
+.front-nav-parent { align-items: center; display: flex; }
+
+.front-nav-parent-link::after {
+    border-color: $front-text transparent transparent;
+    border-style: solid;
+    border-width: .3em .25em 0;
+    content: '';
+    display: inline-block;
+    margin-inline-start: .45rem;
+    vertical-align: middle;
+}
+
+// ========================================
+// Front Header - Dropdowns
+// ========================================
+.front-main-nav .dropdown-menu {
+    border: 1px solid $front-border;
+    border-radius: $front-radius-sm;
+    box-shadow: $front-shadow;
+    margin-top: 0;
+    min-width: 190px;
+    text-align: left;
+}
+
+.front-main-nav .dropdown-item { font-family: var(--front-font-ui); padding-block: .55rem; }
+.front-main-nav .dropdown-item:hover { background: $front-accent-soft; color: $front-accent-hover; }
+.front-main-nav .dropdown-item.active,
+.front-main-nav .dropdown-item:active { background: $front-accent; color: $front-white; }
+
+.front-nav-submenu-toggle {
+    background: transparent;
+    border: 0;
+    color: $front-text;
+    min-height: 42px;
+    padding-inline: .75rem;
+}
+
+html[dir='rtl'] .front-main-nav .dropdown-menu { inset-inline-end: 0; inset-inline-start: auto; }
+html[dir='ltr'] .front-main-nav .dropdown-menu { inset-inline-start: 0; inset-inline-end: auto; }
+
+@media (min-width: 992px) {
+    .front-profile:hover > .dropdown-menu,
+    .front-profile:focus-within > .dropdown-menu,
+    .front-nav-dropdown:hover > .dropdown-menu,
+    .front-nav-dropdown:focus-within > .dropdown-menu {
+        display: block;
+    }
+}

@@ -1,0 +1,38 @@
+@use 'colors' as *;
+@use 'variables' as *;
+
+.front-info-page { background: linear-gradient(135deg, $front-primary-soft, $front-surface 52%, $front-primary-soft); padding-block: 1.25rem 4rem; }
+.front-info-page__container { max-width: $front-content-width; }
+.front-info-page__header { margin: 2rem auto; text-align: center; }
+.front-info-page__header > span { color: $front-primary; font-weight: 700; }
+.front-info-page__header h1 { color: $front-text; font-size: clamp(2rem, 4vw, 3.25rem); margin: .5rem 0 0; }
+.front-info-page__content { color: $front-text; font-size: 1.05rem; line-height: 1.9; overflow-wrap: anywhere; padding: clamp(1.25rem, 4vw, 3rem); }
+// .front-info-page__content { background: $front-surface; border: 1px solid $front-border; border-radius: $front-radius; box-shadow: $front-shadow-sm; color: $front-text; font-size: 1.05rem; line-height: 1.9; overflow-wrap: anywhere; padding: clamp(1.25rem, 4vw, 3rem); }
+.front-info-page__content h1,
+.front-info-page__content h2,
+.front-info-page__content h3,
+.front-info-page__content h4,
+.front-info-page__content h5,
+.front-info-page__content h6 { color: $front-primary-hover; line-height: 1.45; margin: 1.75em 0 .65em; }
+.front-info-page__content > :first-child { margin-top: 0; }
+.front-info-page__content > :last-child { margin-bottom: 0; }
+.front-info-page__content p,
+.front-info-page__content ul,
+.front-info-page__content ol,
+.front-info-page__content blockquote,
+.front-info-page__content table { margin-bottom: 1.25rem; }
+.front-info-page__content ul,
+.front-info-page__content ol { padding-inline-start: 1.6rem; }
+.front-info-page__content a { color: $front-primary; text-decoration: underline; }
+.front-info-page__content blockquote { background: $front-primary-soft; border-inline-start: 4px solid $front-primary; border-radius: $front-radius-sm; color: $front-muted; padding: 1rem 1.25rem; }
+.front-info-page__content table { border-collapse: collapse; display: block; max-width: 100%; overflow-x: auto; width: 100%; }
+.front-info-page__content th,
+.front-info-page__content td { border: 1px solid $front-border; min-width: 8rem; padding: .75rem; vertical-align: top; }
+.front-info-page__content th { background: $front-primary; color: $front-white; }
+.front-info-page__content hr { border-color: $front-border; margin-block: 2rem; }
+.front-info-page__empty { color: $front-muted; text-align: center; }
+
+@media (max-width: 767.98px) {
+    .front-info-page { padding-block: 1rem 2.5rem; }
+    .front-info-page__header { margin: 1.5rem auto; }
+}

@@ -1,0 +1,59 @@
+@use 'variables' as *;
+
+.select2-hidden-accessible + .select2-container {
+    width: 100% !important;
+}
+
+.admin-body .select2-container--default .select2-selection--single {
+    height: calc(2.25rem + 2px);
+    border-color: #dee2e6;
+    border-radius: 0.375rem;
+}
+
+.admin-body .select2-container--default .select2-selection--single .select2-selection__rendered {
+    padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+    color: $admin-text;
+    line-height: 1.5;
+}
+
+.admin-body .select2-container--default .select2-selection--single .select2-selection__arrow {
+    top: 0.35rem;
+    right: 0.5rem;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--single,
+.select2-container--default.select2-container--open .select2-selection--single {
+    border-color: rgba($admin-primary, 0.55);
+    box-shadow: 0 0 0 0.2rem rgba($admin-primary, 0.1);
+}
+
+.is-invalid + .select2-container .select2-selection--single {
+    border-color: var(--bs-form-invalid-border-color);
+}
+
+.select2-dropdown {
+    border-color: $admin-border;
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+    background: $admin-primary;
+}
+
+.admin-table-thumbnail {
+    width: 75px;
+    border: 1px solid $admin-border;
+    border-radius: 0.4rem;
+    object-fit: cover;
+}
+
+.admin-current-image {
+    max-width: 18rem;
+    max-height: 10rem;
+    border: 1px solid $admin-border;
+    border-radius: 0.55rem;
+    object-fit: contain;
+}
+
+table.dataTable > tbody > tr > td {
+    vertical-align: middle;
+}

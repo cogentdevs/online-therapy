@@ -1,0 +1,10 @@
+@use 'variables' as *;
+
+.admin-footer {
+    padding: 1rem clamp(1.25rem, 3vw, 2rem);
+    border-top: 1px solid $admin-border;
+    background: $admin-surface;
+    color: $admin-muted;
+    font-size: 0.78rem;
+    text-align: center;
+}
